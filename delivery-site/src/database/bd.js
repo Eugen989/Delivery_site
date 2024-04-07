@@ -1,15 +1,12 @@
-const mysql = require('mysql');
+import { MongoClient } from 'mongodb';
 
-     const connection = mysql.createConnection({
-         host: 'localhost',
-         user: 'root',
-         password: '',
-         database: 'delivery_site'
-     });
+const client = new MongoClient('mongodb+srv://russianfox36:ExqfAv0YyFiJ7P4t@cluster0.tcjngn3.mongodb.net/delivery_site?retryWrites=true&w=majority&appName=Cluster0')
 
-     connection.connect((err) => {
-         if (err) throw err;
-         console.log('Connected to MySQL database');
-     });
-
-     module.exports = connection;
+const start = async () =>{
+    try{
+        await client.connect()
+        console.log('Соединение установлено')
+    } catch(e){
+        console.log(e)
+    }
+}
