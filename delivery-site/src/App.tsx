@@ -1,15 +1,14 @@
 import './components/styles/App.css';
-//import MyButton from './components/UI/button/MyButton';
 import "./components/styles/index.css";
+//import MyButton from './components/UI/button/MyButton';
+
 import Navbar from "./components/navbar/Navbar.tsx";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
   Route,
-  Link,
-  Outlet
+  BrowserRouter,
+  Routes
 } from "react-router-dom";
 import Home from './pages/home/Home.tsx';
 import Products from './pages/products/Products.tsx';
@@ -20,47 +19,65 @@ import Footer from './components/footer/Footer.tsx';
 
 
 function App() {
-    const Layout = () => {
-        return (
+    // const Layout = () => {
+    //     return (
+    //         <div className='main'>
+    //             <Navbar/>
+    //             <div className='container'>
+    //                 <div className='menuContainer'>
+    //                     <Menu/>
+    //                 </div>
+    //                 <div className='contentContainer'>
+    //                     <Outlet></Outlet>
+    //                 </div>
+    //                 <Footer/>
+    //             </div>
+                
+    //         </div>
+    //     )
+    // }
+
+    // const router = createBrowserRouter([
+    //     {
+    //     path: "/",
+    //     element: <Layout/>,
+    //     children: [
+    //         {
+    //             path: "/home",
+    //             element: <Home/>
+    //         },
+    //         {
+    //             path: "/product",
+    //             element: <Home/>
+    //         },
+    //     ]
+    //     },
+    //     {
+    //         path: "login",
+    //         element: <Login/>
+    //     }
+    // ])
+
+    return (
+        <BrowserRouter>
             <div className='main'>
                 <Navbar/>
                 <div className='container'>
-                    <div className='menuContainer'>
-                        <Menu/>
-                    </div>
-                    <div className='contentContainer'>
-                        <Outlet></Outlet>
-                    </div>
-                    <Footer/>
+
+                    <Routes>
+                        <Route path='/' Component={Home}/>
+                        <Route path='/products' Component={Products}/>
+                        <Route path='/login' Component={Login}/>
+                    </Routes>
+
+                    
+
                 </div>
-                
+                <Footer/>
             </div>
-        )
-    }
+        </BrowserRouter>
 
-    const router = createBrowserRouter([
-        {
-        path: "/",
-        element: <Layout/>,
-        children: [
-            {
-                path: "/",
-                element: <Home/>
-            },
-            {
-                path: "/product",
-                element: <Home/>
-            },
-        ]
-        },
-        {
-            path: "login",
-            element: <Login/>
-        }
-    ])
-
-    return (
-        <RouterProvider router={router}/>
+        //<RouterProvider router={router}/>
     )
 }
 

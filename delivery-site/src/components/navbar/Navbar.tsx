@@ -1,15 +1,20 @@
 import "./navbar.module.css"
 
+// Маршруты
+// /
+// /products
+// /login
+
 function Navbar() {
     return (
         <div className="wrapper">
             <header className="header">
                 <div className="centring">
                     <div className="header-flex">
-                        <a href="#" className="logo">
+                        <a href="/" className="logo">
                             logo
                         </a>
-                        <a href="#" className="catalog-link">
+                        <a href="/products" className="catalog-link">
                             Каталог
                         </a>
                         <form action="#" className="form-search">
@@ -20,7 +25,7 @@ function Navbar() {
                             <span className="indicator-buy">3</span>
                         </a>
                         <div className="profile-link">
-                            <a href="#" className="no-profile no-profile--active">
+                            <a href="/login" className="no-profile no-profile--active">
                                 <img src="images/no-profile.svg" alt=""/>
                                 Войти
                             </a>
