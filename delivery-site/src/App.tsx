@@ -13,6 +13,7 @@ import {
 import Home from './pages/home/Home.tsx';
 import Products from './pages/products/Products.tsx';
 import Login from './pages/login/Login.tsx';
+import Logup from "./pages/logup/logup.tsx";
 import Menu from './components/menu/Menu.tsx';
 import Footer from './components/footer/Footer.tsx';
 
@@ -68,6 +69,7 @@ function App() {
                         <Route path='/' Component={Home}/>
                         <Route path='/products' Component={Products}/>
                         <Route path='/login' Component={Login}/>
+                        <Route path='/logup' Component={Logup}/>
                     </Routes>
 
                     
