@@ -11,17 +11,19 @@ const Products = () => {
 
     return (
         <div className="products">
-            {cards.map((card) => (
-                <div key={card.id}>
-                    <CardItem title={card.title}
-                    warehouse={card.warehouse}
-                    massa={card.massa}
-                    size={card.size} 
-                    body={card.body} 
-                    price={card.price} 
-                    price_now={card.price_now}/>
-                </div>
-            ))}
+            <div className="centring">
+                {cards.map((card) => (
+                    <div key={card.id}>
+                        <CardItem title={card.title}
+                                  warehouse={card.warehouse}
+                                  massa={card.massa}
+                                  size={card.size}
+                                  body={card.body}
+                                  price={card.price}
+                                  price_now={card.price_now}/>
+                    </div>
+                ))}
+            </div>
             
         </div>
     );
