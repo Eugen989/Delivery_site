@@ -2,7 +2,7 @@ import React from "react";
 import "./cardItem.module.css";
 
 const CardItem = (props) => {
-    const { title , body, warehouse} = props;
+    const { title ,size, massa, body, warehouse,price,price_now} = props;
 
     return (
         <div className="card-product">
@@ -15,10 +15,10 @@ const CardItem = (props) => {
                         {title} {/* Отобразите переданный title */}
                     </h4>
                         <p className="size">
-                            Размер: 
+                            Размер: {size} 
                         </p>
                         <p className="massa">
-                            Масса:
+                            Масса: {massa} кг
                         </p>
                         <p className="Warehouse">
                             Склад: {warehouse}
@@ -30,9 +30,9 @@ const CardItem = (props) => {
                     <div className="price-block">
                         <p className="price">
                             Цена: <span className="number-price">
-                                899 ₽
+                                {price_now} ₽
                             </span>
-                            <span className="sale-price">777 ₽</span>
+                            <span className="sale-price">{price} ₽</span>
                         </p>
                         <div className="buy-btn">
                             Купить
