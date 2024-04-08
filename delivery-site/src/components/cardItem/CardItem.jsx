@@ -2,16 +2,18 @@ import React from "react";
 import "./cardItem.module.css";
 
 const CardItem = (props) => {
+    const { title } = props;
+
     return (
         <div className="card-product">
-                <div className="media">
-                    <img src="./images/card.png" alt=""/>
-                </div>
-                <div className="text-card">
-                    <div className="descrition">
-                        <h4 className="title-product">
-                            Имя продукта
-                        </h4>
+            <div className="media">
+                <img src="./images/card.png" alt="" />
+            </div>
+            <div className="text-card">
+                <div className="description">
+                    <h4 className="title-product">
+                        {title} {/* Отобразите переданный title */}
+                    </h4>
                         <p className="size">
                             Размер
                         </p>
