@@ -27,7 +27,7 @@ function App() {
             <div className='main'>
                 
                 <Navbar/>
-                {/* <div className='container'>
+                <div className='container'>
                     <Routes>
                         <Route path='/' Component={Home}/>
                         <Route path='/products' Component={Products}/>
@@ -35,7 +35,7 @@ function App() {
                         <Route path='/logup' Component={Logup}/>
                     </Routes>
 
-                </div> */}
+                </div>
                 <Footer/>
             </div>
         </BrowserRouter>

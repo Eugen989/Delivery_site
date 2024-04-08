@@ -14,7 +14,7 @@ const Products = () => {
                 <CardItem card={card} />
             )} */}
             
-            {/* <div className="card-product">
+            <div className="card-product">
                 <div className="media">
                     <img src="./images/card.png" alt=""/>
                 </div>
@@ -48,7 +48,7 @@ const Products = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
             
         </div>
     )
