@@ -8,7 +8,7 @@ const Products = () => {
                     <img src="./images/card.png" alt=""/>
                 </div>
                 <div className="text-card">
-                    <div className="descrition">
+                    <div className="description">
                         <h4 className="title-product">
                             Название товара
                         </h4>

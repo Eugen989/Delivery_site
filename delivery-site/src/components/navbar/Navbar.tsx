@@ -22,7 +22,7 @@ function Navbar() {
                         </form>
                         <a href="#" className="basket">
                             <img src="images/basket.svg" alt="basket"/>
-                            <span className="indicator-buy">3</span>
+                            <span className="indicator-buy text-1">3</span>
                         </a>
                         <div className="profile-link">
                             <a href="/login" className="no-profile no-profile--active">
