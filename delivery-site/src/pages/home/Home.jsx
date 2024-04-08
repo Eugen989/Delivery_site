@@ -38,11 +38,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/marshrut.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Маршрутизация доставок
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -53,11 +53,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/uprav.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Управление складами
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -68,11 +68,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/kontrol.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Контроль за перевозкой
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -91,11 +91,11 @@ const Home = () => {
                     <div className="opportunity-group">
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/kontrol-pokup.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Контроль за доставкой
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -106,11 +106,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/zakaz.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Делать заказ товара
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -121,11 +121,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/vbor.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Выбирать маршрут
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
@@ -136,11 +136,11 @@ const Home = () => {
                         </div>
                         <div className="opportunity">
                             <div className="media">
-                                <img src="./images/create-pr.svg" alt=""/>
+                                <img src="./images/spospb-opl.svg" alt=""/>
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                    Несколько способов оплаты
                                 </h3>
                                 <p className="description-opportunity text-1">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
