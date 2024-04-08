@@ -1,0 +1,5 @@
+{
+    "serverPort": 5000,
+    "dbUrl": "mongodb+srv://kruglikeugen:bAvBqlDeZKjLHx2O@cluster0.zj4dx7l.mongodb.net/",
+    "secretKey": "mern-socket-key"
+}
