@@ -4,29 +4,24 @@ import CardItem from "../../components/cardItem/CardItem";
 
 const Products = () => {
     const [cards, setCards] = useState([
-        { id: 1, title: "Картошечка",warehouse:984989 ,body: "Очень очень вкусно" },
-        { id: 2, title: "Драники",warehouse:123  ,body: "Сделано из картошки" },
-        { id: 3, title: "Блины",warehouse:753  ,body: "С добавлением картошки" },
+        { id: 1, title: "Картошечка",warehouse:"Минск",massa:54,size:34,body: "Очень очень вкусно",price:777,price_now:888 },
+        { id: 2, title: "Драники",warehouse:"Брянск",massa:0.750,size:17,body: "Сделано из картошки",price:799,price_now:988},
+        { id: 3, title: "Блины",warehouse:"Москва",massa:0.250,size:54,body: "С добавлением картошки",price:997,price_now:898 },
     ]);
 
     return (
-        <div className="products mt-1">
-            <div className="centring">
-                <div className="filter">
-
+        <div className="products">
+            {cards.map((card) => (
+                <div key={card.id}>
+                    <CardItem title={card.title}
+                    warehouse={card.warehouse}
+                    massa={card.massa}
+                    size={card.size} 
+                    body={card.body} 
+                    price={card.price} 
+                    price_now={card.price_now}/>
                 </div>
-                <div className="card-group">
-                    {cards.map((card) => (
-                        <div key={card.id}>
-                            <CardItem title={card.title}
-                                      warehouse={card.warehouse}
-                                      body={card.body} />
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-
+            ))}
             
         </div>
     );
