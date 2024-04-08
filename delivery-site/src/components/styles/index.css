@@ -314,8 +314,26 @@ button {
   margin-top: 30px;
 }
 
+.form-block form {
+  max-width: 350px;
+  width: 100%;
+}
+
 .form-block input{
   display: block;
+}
+
+.btn-form {
+  margin-top: 10px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-form-in {
+  justify-content: end;
 }
 
 .form-block input:not(:first-child), .radio-inputs{
@@ -343,3 +361,9 @@ button {
   display: block;
   margin-top: 25px;
 }
+
+.link-login {
+  font-weight: bold;
+}
+
+

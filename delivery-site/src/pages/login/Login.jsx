@@ -1,12 +1,13 @@
 import "./login.module.css";
 import {MyInput, RadioBtn} from "../../components/UI/input/MyInput.jsx";
+import {MyButton1} from "../../components/UI/button/MyButton.jsx";
 
 const Login = () => {
     return (
         <div className="login">
             <div className="centring">
                 <div className="login-wrapper mt-1">
-                    <h2 className="title-page">
+                    <h2 className="title-3">
                         Регистрация
                     </h2>
                     <form action="" method="POST" className="form-block">
@@ -23,6 +24,11 @@ const Login = () => {
                                 <RadioBtn id="r-2" name="1" value="huey"/>
                                 <label htmlFor="r-2">Я продавец</label>
                             </div>
+                        </div>
+                        <div className="btn-form btn-form-in">
+                            <MyButton1 type="submit">
+                                Отправить
+                            </MyButton1>
                         </div>
                     </form>
                     <a href="/logup" className="link-logup">У меня уже есть аккаунт</a>
