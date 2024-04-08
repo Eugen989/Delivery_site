@@ -366,4 +366,48 @@ button {
   font-weight: bold;
 }
 
+/*ПРОФИЛЬ*/
 
+.top-profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-top-profile {
+  display: flex;
+  gap: 34px;
+}
+
+.left-top-profile .media {
+  max-width: 180px;
+  width: 100%;
+}
+
+.left-top-profile .media img {
+  width: 100%;
+}
+
+.status-profile span, .contact-item span {
+  font-weight: bold;
+}
+
+.exit-profile {
+  font-weight: bold;
+  color: #EA1010;
+}
+
+.contact-item:not(:first-child) {
+  margin-top: 12px;
+}
+
+.el-order {
+  display: none;
+}
+
+.el-order--active {
+  display: block;
+}
+
+.el-order h2 {
+  text-align: center;
+}

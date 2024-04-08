@@ -15,6 +15,7 @@ import Products from './pages/products/Products.jsx';
 import Login from './pages/login/Login.jsx';
 import Logup from "./pages/logup/logup.jsx";
 import Footer from './components/footer/Footer.jsx';
+import Profile from "./pages/profile/Profile.jsx";
 
 
 console.log("Проект в App")
@@ -32,6 +33,7 @@ function App() {
                         <Route path='/products' Component={Products}/>
                         <Route path='/login' Component={Login}/>
                         <Route path='/logup' Component={Logup}/>
+                        <Route path='/profile' Component={Profile}/>
                     </Routes>
 
                 </div>

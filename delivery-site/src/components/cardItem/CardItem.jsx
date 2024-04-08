@@ -10,8 +10,8 @@ const CardItem = (props) => {
                 <img src="./images/card.png" alt="" />
             </div>
             <div className="text-card">
-                <div className="description">
-                    <h4 className="title-product">
+                <div className="description text-1">
+                    <h4 className="title-product title-4">
                         {title} {/* Отобразите переданный title */}
                     </h4>
                         <p className="size">
