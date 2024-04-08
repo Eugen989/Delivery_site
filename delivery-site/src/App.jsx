@@ -2,7 +2,7 @@ import './components/styles/App.css';
 import "./components/styles/index.css";
 //import MyButton from './components/UI/button/MyButton';
 
-import Navbar from "./components/navbar/Navbar.tsx";
+import Navbar from "./components/navbar/Navbar.jsx";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -14,8 +14,8 @@ import Home from './pages/home/Home.jsx';
 import Products from './pages/products/Products.jsx';
 import Login from './pages/login/Login.jsx';
 import Logup from "./pages/logup/logup.jsx";
-import Menu from './components/menu/Menu.tsx';
 import Footer from './components/footer/Footer.jsx';
+import Profile from "./pages/profile/Profile.jsx";
 
 
 console.log("Проект в App")
@@ -33,6 +33,7 @@ function App() {
                         <Route path='/products' Component={Products}/>
                         <Route path='/login' Component={Login}/>
                         <Route path='/logup' Component={Logup}/>
+                        <Route path='/profile' Component={Profile}/>
                     </Routes>
 
                 </div>

@@ -29,7 +29,7 @@ function Navbar() {
                                 <img src="images/no-profile.svg" alt=""/>
                                 Войти
                             </a>
-                            <a href="#" className="yes-profile">
+                            <a href="/profile" className="yes-profile">
                                 <img src="images/avatar-profile.png" alt=""/>
                             </a>
                         </div>
