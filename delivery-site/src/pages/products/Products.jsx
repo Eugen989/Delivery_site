@@ -10,14 +10,23 @@ const Products = () => {
     ]);
 
     return (
-        <div className="products">
-            {cards.map((card) => (
-                <div key={card.id}>
-                    <CardItem title={card.title}
-                    warehouse={card.warehouse} 
-                    body={card.body} />
+        <div className="products mt-1">
+            <div className="centring">
+                <div className="filter">
+
                 </div>
-            ))}
+                <div className="card-group">
+                    {cards.map((card) => (
+                        <div key={card.id}>
+                            <CardItem title={card.title}
+                                      warehouse={card.warehouse}
+                                      body={card.body} />
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+
             
         </div>
     );
