@@ -300,4 +300,46 @@ button {
   margin-top: 20px;
 }
 
+/*ЛОГИН*/
 
+.login-wrapper {
+  text-align: center;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.form-block input{
+  display: block;
+}
+
+.form-block input:not(:first-child), .radio-inputs{
+  margin-top: 15px;
+}
+
+.radio-inputs {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio {
+  display: flex;
+  width: 100%;
+}
+
+.radio input, .radio label {
+  cursor: pointer;
+}
+
+.link-logup {
+  display: block;
+  margin-top: 25px;
+}

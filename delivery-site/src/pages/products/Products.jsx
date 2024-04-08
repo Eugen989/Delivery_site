@@ -1,16 +1,27 @@
+import { useState } from "react";
 import "./products.module.css";
+import CardItem from "../../components/cardItem/CardItem.jsx";
+
+// let [cards, setCards] = useState([
+//     {id: 1, title: "Картошечка", body: "Очень очень вкусно"},
+//     {id: 2, title: "Драники", body: "Сделано из картошки"},
+// ]);
 
 const Products = () => {
     return (
         <div className="products">
+            {/* {cards.map((card) =>
+                <CardItem card={card} />
+            )} */}
+
             <div className="card-product">
                 <div className="media">
                     <img src="./images/card.png" alt=""/>
                 </div>
                 <div className="text-card">
-                    <div className="description">
+                    <div className="descrition">
                         <h4 className="title-product">
-                            Название товара
+                            Имя продукта
                         </h4>
                         <p className="size">
                             Размер
@@ -32,13 +43,13 @@ const Products = () => {
                             </span>
                             <span className="sale-price">777 ₽</span>
                         </p>
-                        {/*КНОПКА*/}
                         <div className="buy-btn">
                             Купить
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     )
 };
