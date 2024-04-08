@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -33,6 +37,51 @@ button {
   cursor: pointer;
 }
 
+.text-1 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-2, .text-3, .text-4 {
+  font-weight: 500;
+}
+
+.text-2 {
+  font-size: 18px;
+}
+
+.text-3 {
+  font-size: 24px;
+}
+
+.text-4 {
+  font-size: 32px;
+}
+
+.title-1 {
+  font-size: 96px;
+}
+
+.title-2 {
+  font-size: 64px;
+}
+
+.title-3 {
+  font-size: 32px;
+}
+
+.title-4 {
+  font-size: 24px;
+}
+
+.mt-1 {
+  margin-top: 120px;
+}
+
+.mt-2 {
+  margin-top: 50px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -53,6 +102,7 @@ button {
   flex: 0 0 auto;
   padding: 39px 0;
   box-shadow: 0 0 20px #000;
+  margin-top: 120px;
 }
 
 .centring {
@@ -60,6 +110,8 @@ button {
   width: 100%;
   margin: 0 auto;
 }
+
+/* NAVBAR */
 
 .header-flex {
   display: flex;
@@ -98,8 +150,6 @@ button {
   border-radius: 50%;
   top: -5px;
   right: -10px;
-  font-size: 16px;
-  font-weight: 400;
   color: #fff;
 }
 .basket .indicator-buy--active {
@@ -131,32 +181,15 @@ button {
   font-weight: 700;
 }
 
+/* FOOTER */
+
 .footer-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.baner {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.title-site {
-  font-size: 96px;
-  font-weight: bold;
-}
-
-.anchor {
-  font-size: 24px;
-  font-weight: 400;
-  padding: 12px 32px;
-  background: #D9D9D9;
-}
+/* PRODUCTS */
 
 .card-product {
   max-width: 909px;
@@ -179,7 +212,7 @@ button {
   width: 100%;
 }
 
-.descrition {
+.description {
   max-width: 345px;
   width: 100%;
 }
@@ -198,3 +231,139 @@ button {
   font-size: 16px;
   margin-left: 5px;
 }
+
+/* HOME */
+
+.banner {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.anchor {
+  padding: 12px 32px;
+  background: #D9D9D9;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.opportunities {
+  text-align: center;
+}
+
+.opportunity-group {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.opportunity-group .media img {
+  display: block;
+  margin: 0 auto;
+}
+
+.text-opportunity, .description-opportunity {
+  margin-top: 10px;
+}
+
+.parameter {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 90px;
+}
+
+.parameter:nth-child(even) {
+  flex-direction: row;
+}
+
+.types-delivery h2 {
+  text-align: center;
+}
+
+.type-delivery {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.type-delivery:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.type-delivery-text p {
+  margin-top: 20px;
+}
+
+/*ЛОГИН*/
+
+.login-wrapper {
+  text-align: center;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.form-block form {
+  max-width: 350px;
+  width: 100%;
+}
+
+.form-block input{
+  display: block;
+}
+
+.btn-form {
+  margin-top: 10px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-form-in {
+  justify-content: end;
+}
+
+.form-block input:not(:first-child), .radio-inputs{
+  margin-top: 15px;
+}
+
+.radio-inputs {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio {
+  display: flex;
+  width: 100%;
+}
+
+.radio input, .radio label {
+  cursor: pointer;
+}
+
+.link-logup {
+  display: block;
+  margin-top: 25px;
+}
+
+.link-login {
+  font-weight: bold;
+}
+
+
