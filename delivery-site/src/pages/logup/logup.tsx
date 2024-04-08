@@ -1,21 +1,23 @@
-import "./login.module.css";
+import "./logup.module.css";
 
-const Login = () => {
+const Logup = () => {
     return (
-        <div className="login">
+        <div className="logup">
             <div className="centring">
                 <div className="login-wrapper">
                     <h2 className="title-page">
-                        Регистрация
+                        Авторизация
                     </h2>
                     <form action="">
                         Инпуты и кнопки
                     </form>
-                    <a href="/logup" className="link-logup">У меня уже есть аккаунт</a>
+                    <a href="/login" className="link-login">
+                        У меня нет аккаунта
+                    </a>
                 </div>
             </div>
         </div>
     )
 };
 
-export default Login;
+export default Logup;
