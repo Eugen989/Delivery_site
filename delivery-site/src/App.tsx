@@ -70,8 +70,6 @@ function App() {
                         <Route path='/login' Component={Login}/>
                     </Routes>
 
-                    
-
                 </div>
                 <Footer/>
             </div>
