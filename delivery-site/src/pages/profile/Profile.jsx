@@ -1,6 +1,6 @@
 import "./profile.module.css";
 import CardItem from "../../components/cardItem/CardItem.jsx";
-import Map from "../../components/map/Map.jsx";
+import MapComponent from "../../components/map/Map.jsx";
 
 const Profile = () => {
     return (
@@ -48,7 +48,7 @@ const Profile = () => {
                         </h2>
                         <div className="card-group mt-2">
                             <CardItem></CardItem>
-                            <Map></Map>
+                            <MapComponent></MapComponent>
                         </div>
                     </div>
                 </div>
