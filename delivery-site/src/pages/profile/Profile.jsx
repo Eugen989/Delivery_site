@@ -1,5 +1,6 @@
 import "./profile.module.css";
 import CardItem from "../../components/cardItem/CardItem.jsx";
+import Map from "../../components/map/Map.jsx";
 
 const Profile = () => {
     return (
@@ -16,7 +17,7 @@ const Profile = () => {
                                     id_0000001
                                 </h2>
                                 <p className="status-profile text-4">
-                                    <span>Статус:</span> покупатель
+                                    <span>Статус:</span>покупатель
                                 </p>
                             </div>
                         </div>
@@ -37,7 +38,7 @@ const Profile = () => {
                                 <span>Местоположение:</span> Антарктида
                             </li>
                             <li className="contact-item">
-                                <span>О пользователе:</span> О пользователе: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ducimus laborum consectetur repellat quas porro, nobis tempora impedit facere. In corporis eaque magni? Pariatur optio nam laudantium! Possimus, sunt amet!
+                                <span>О пользователе:</span> О пользователе:Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ducimus laborum consectetur repellat quas porro, nobis tempora impedit facere. In corporis eaque magni? Pariatur optio nam laudantium! Possimus, sunt amet!
                             </li>
                         </ul>
                     </div>
@@ -47,7 +48,7 @@ const Profile = () => {
                         </h2>
                         <div className="card-group mt-2">
                             <CardItem></CardItem>
-                            <CardItem></CardItem>
+                            <Map></Map>
                         </div>
                     </div>
                 </div>
