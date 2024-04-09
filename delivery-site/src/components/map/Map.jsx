@@ -94,9 +94,10 @@ const MapComponent = () => {
             if (Math.abs(clickX - x) <= 10 && Math.abs(clickY - y) <= 10) {
                 const { shortestRoute, mediumRoute, longRoute } = findRoutes('Брянск', city);
                 setRoutes({ shortest: shortestRoute, medium: mediumRoute, long: longRoute });
-                drawPath(shortestRoute, 'black');
-                drawPath(mediumRoute, 'blue');
                 drawPath(longRoute, 'red');
+                drawPath(mediumRoute, 'blue');
+                drawPath(shortestRoute, 'black');
+                
             }
         }
     }
