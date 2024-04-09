@@ -1,197 +1,87 @@
 import React, { useState, useEffect } from 'react';
 
 const cities = {
-    "Брянск": { x: -2, y: -4 },
-    "Москва": { x: 3, y: 4 },
-    "СПБ": { x: 0, y: 2 },
-    "Минск": { x: 5, y: -1 },
-    "Орёл": { x: 16, y: 4 },
-    "Кыргистан": { x: 0, y: 7 },
-    "Литва": { x: -5, y: -1 }
+    "Брянск": { x: 50, y: 150 },
+    "Москва": { x: 300, y: 50 },
+    "СПБ": { x: 250, y: 150 },
+    "Минск": { x: 550, y: 200 },
+    "Орёл": { x: 150, y: 300 },
+    "Кыргистан": { x: 400, y: 300 },
+    "Литва": { x: 300, y: 400 }
 };
 
 const MapComponent = () => {
-    const [startCity, setStartCity] = useState('');
-    const [endCity, setEndCity] = useState('');
-    let minX, maxX, minY, maxY, scaleX, scaleY;
+    const [routes, setRoutes] = useState({});
 
     useEffect(() => {
         const canvas = document.getElementById('mapCanvas');
         const ctx = canvas.getContext('2d');
-        const padding = 10;
 
-        minX = Infinity;
-        maxX = -Infinity;
-        minY = Infinity;
-        maxY = -Infinity;
-
+        // Draw cities with some padding
         for (const city in cities) {
-            minX = Math.min(minX, cities[city].x);
-            maxX = Math.max(maxX, cities[city].x);
-            minY = Math.min(minY, cities[city].y);
-            maxY = Math.max(maxY, cities[city].y);
-        }
-
-        minX -= padding;
-        maxX += padding;
-        minY -= padding;
-        maxY += padding;
-
-        scaleX = 760 / (maxX - minX);
-        scaleY = 560 / (maxY - minY);
-
-        ctx.beginPath();
-        ctx.moveTo((0 - minX) * scaleX, 0);
-        ctx.lineTo((0 - minX) * scaleX, 600);
-        ctx.moveTo(0, (0 - minY) * scaleY);
-        ctx.lineTo(800, (0 - minY) * scaleY);
-        ctx.stroke();
-
-        for (const city in cities) {
-            const x = (cities[city].x - minX) * scaleX;
-            const y = (cities[city].y - minY) * scaleY;
-
-            ctx.fillStyle = 'red';
+            const { x, y } = cities[city];
+            ctx.fillStyle = 'black';
             ctx.beginPath();
-            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
             ctx.fill();
 
-            ctx.fillStyle = 'black';
-            ctx.fillText(city, x + 12, y - 10);
+            ctx.fillText(city, x + 10, y - 10);
         }
-
-        const handleClick = (event) => {
-            const rect = canvas.getBoundingClientRect();
-            const clickX = event.clientX - rect.left;
-            const clickY = event.clientY - rect.top;
-
-            for (const city in cities) {
-                const x = (cities[city].x - minX) * scaleX;
-                const y = (cities[city].y - minY) * scaleY;
-
-                if (clickX >= x - 10 && clickX <= x + 10 && clickY >= y - 10 && clickY <= y + 10) {
-                    if (startCity === '') {
-                        setStartCity(city);
-                    } else if (endCity === '') {
-                        if (city !== startCity) {
-                            setEndCity(city);
-                        }
-                    }
-                }
-            }
-        };
 
         canvas.addEventListener('click', handleClick);
 
         return () => {
             canvas.removeEventListener('click', handleClick);
         };
-
     }, []);
 
     function calculateDistance(cityA, cityB) {
-        const deltaX = cityA.x - cityB.x;
-        const deltaY = cityA.y - cityB.y;
+        const deltaX = cityB.x - cityA.x;
+        const deltaY = cityB.y - cityA.y;
         return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     }
 
+    function findRoutes(startCity, endCity) {
+        const shortestRoute = [startCity, endCity];
+        const mediumRoute = ["Москва", findRandomCity(["Москва", startCity]), startCity, endCity];
+        const longRoute = [startCity, "Москва", findRandomCity([startCity, "Москва"]), endCity];
 
-    function findShortestPath(startCity, endCity) {
-        const distances = {};
-        const previousCities = {};
-        const visitedCities = [];
-        let currentCity = startCity;
+        const startCityCoords = cities[startCity];
+        const endCityCoords = cities[endCity];
 
-        for (const city in cities) {
-            distances[city] = city === startCity ? 0 : Infinity;
-        }
+        const shortRouteDistance = calculateDistance(startCityCoords, endCityCoords);
+        const mediumRouteDistance = calculateDistance(cities["Москва"], startCityCoords) + calculateDistance(startCityCoords, endCityCoords);
+        const longRouteDistance = calculateDistance(startCityCoords, cities["Москва"]) + calculateDistance(cities["Москва"], cities[endCity]) + calculateDistance(cities[endCity], startCityCoords);
 
-        while (currentCity !== endCity) {
-            visitedCities.push(currentCity);
+        console.log(`Short route distance: ${shortRouteDistance}`);
+        console.log(`Medium route distance: ${mediumRouteDistance}`);
+        console.log(`Long route distance: ${longRouteDistance}`);
 
-            for (const neighbor in cities) {
-                if (neighbor !== currentCity && !visitedCities.includes(neighbor)) {
-                    const distance = calculateDistance(cities[currentCity], cities[neighbor]);
-                    if (distances[currentCity] + distance < distances[neighbor]) {
-                        distances[neighbor] = distances[currentCity] + distance;
-                        previousCities[neighbor] = currentCity;
-                    }
-                }
-            }
-
-            let nextCity = null;
-            let shortestDistance = Infinity;
-            for (const city in distances) {
-                if (!visitedCities.includes(city) && distances[city] < shortestDistance) {
-                    nextCity = city;
-                    shortestDistance = distances[city];
-                }
-            }
-
-            if (!nextCity) {
-                break;
-            }
-
-            currentCity = nextCity;
-        }
-
-        const shortestPath = [endCity];
-        let prevCity = endCity;
-        while (prevCity !== startCity) {
-            prevCity = previousCities[prevCity];
-            shortestPath.unshift(prevCity);
-        }
-
-        return shortestPath;
+        return { shortestRoute, mediumRoute, longRoute };
     }
 
-    function findLongestPath(startCity, endCity) {
-        const distances = {};
-        const previousCities = {};
-        const visitedCities = [];
-        let currentCity = startCity;
+    function findRandomCity(excludeCities) {
+        const availableCities = Object.keys(cities).filter(city => !excludeCities.includes(city));
+        return availableCities[Math.floor(Math.random() * availableCities.length)];
+    }
 
-        for (const city in cities) {
-            distances[city] = city === startCity ? 0 : -Infinity;
-        }
+    function drawPath(path, color) {
+        const canvas = document.getElementById('mapCanvas');
+        const ctx = canvas.getContext('2d');
 
-        while (currentCity !== endCity) {
-            visitedCities.push(currentCity);
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
 
-            for (const neighbor in cities) {
-                if (neighbor !== currentCity && !visitedCities.includes(neighbor)) {
-                    const distance = calculateDistance(cities[currentCity], cities[neighbor]);
-                    if (distances[currentCity] + distance > distances[neighbor]) {
-                        distances[neighbor] = distances[currentCity] + distance;
-                        previousCities[neighbor] = currentCity;
-                    }
-                }
+        for (let i = 0; i < path.length; i++) {
+            const city = cities[path[i]];
+            if (i === 0) {
+                ctx.moveTo(city.x, city.y);
+            } else {
+                ctx.lineTo(city.x, city.y);
             }
-
-            let nextCity = null;
-            let longestDistance = -Infinity;
-            for (const city in distances) {
-                if (!visitedCities.includes(city) && distances[city] > longestDistance) {
-                    nextCity = city;
-                    longestDistance = distances[city];
-                }
-            }
-
-            if (!nextCity) {
-                break;
-            }
-
-            currentCity = nextCity;
         }
-
-        const longestPath = [endCity];
-        let prevCity = endCity;
-        while (prevCity !== startCity) {
-            prevCity = previousCities[prevCity];
-            longestPath.unshift(prevCity);
-        }
-
-        return longestPath;
+        ctx.stroke();
     }
 
     function handleClick(event) {
@@ -200,46 +90,28 @@ const MapComponent = () => {
         const clickY = event.clientY - rect.top;
 
         for (const city in cities) {
-            const x = (cities[city].x - minX) * scaleX;
-            const y = (cities[city].y - minY) * scaleY;
-
-            if (clickX >= x - 10 && clickX <= x + 10 && clickY >= y - 10 && clickY <= y + 10) {
-                if (startCity === '') {
-                    setStartCity(city);
-                } else {
-                    setEndCity(city);
-                }
+            const { x, y } = cities[city];
+            if (Math.abs(clickX - x) <= 10 && Math.abs(clickY - y) <= 10) {
+                const { shortestRoute, mediumRoute, longRoute } = findRoutes('Брянск', city);
+                setRoutes({ shortest: shortestRoute, medium: mediumRoute, long: longRoute });
+                drawPath(shortestRoute, 'black');
+                drawPath(mediumRoute, 'blue');
+                drawPath(longRoute, 'red');
             }
         }
     }
 
-    function drawPath(path, color) {
-        const canvas = document.getElementById('mapCanvas');
-        const ctx = canvas.getContext('2d');
-
-        ctx.beginPath();
-        ctx.moveTo((cities[path[0]].x - minX) * scaleX, (cities[path[0]].y - minY) * scaleY);
-        ctx.strokeStyle = color;
-
-        for (let i = 1; i < path.length; i++) {
-            const city = cities[path[i]];
-            ctx.lineTo((city.x - minX) * scaleX, (city.y - minY) * scaleY);
-        }
-
-        ctx.lineWidth = 3;
-        ctx.stroke();
-    }
-
-    useEffect(() => {
-        if (startCity !== '' && endCity !== '') {
-            const shortestPath = findShortestPath(startCity, endCity);
-            const longPath = findLongestPath(startCity, endCity);
-            drawPath(shortestPath, 'red');
-            drawPath(longPath, 'blue');
-        }
-    }, [startCity, endCity]);
-
-    return <canvas id="mapCanvas" width="800" height="600"></canvas>;
+    return (
+        <>
+            <canvas id="mapCanvas" width="600" height="500"></canvas>
+            <div>
+                <h3>Routes:</h3>
+                <p>Shortest Route: {routes.shortest && routes.shortest.join(' -> ')}</p>
+                <p>Medium Route: {routes.medium && routes.medium.join(' -> ')}</p>
+                <p>Long Route: {routes.long && routes.long.join(' -> ')}</p>
+            </div>
+        </>
+    );
 };
 
 export default MapComponent;
