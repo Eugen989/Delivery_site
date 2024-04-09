@@ -20,7 +20,7 @@ function Navbar() {
                         <form action="#" className="form-search">
                             <input type="search" placeholder="Поиск..."/>
                         </form>
-                        <a href="#" className="basket">
+                        <a href="/basket" className="basket-link">
                             <img src="images/basket.svg" alt="basket"/>
                             <span className="indicator-buy text-1">3</span>
                         </a>

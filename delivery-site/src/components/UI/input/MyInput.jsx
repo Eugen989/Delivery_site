@@ -13,5 +13,17 @@ const RadioBtn = ({ children, ...props }) => {
     );
 };
 
+const InputFilter = ({ children, ...props }) => {
+    return (
+        <input type="number" {...props} className={classes.inputFilter} />
+    );
+};
 
-export { MyInput, RadioBtn };
+const InputCheck = ({ children, ...props }) => {
+    return (
+        <input type="checkbox" {...props} className={classes.InputCheck} />
+    );
+};
+
+
+export { MyInput, RadioBtn, InputFilter, InputCheck };

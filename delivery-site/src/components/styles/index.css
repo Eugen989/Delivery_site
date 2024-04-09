@@ -37,6 +37,11 @@ button {
   cursor: pointer;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
 .text-1 {
   font-size: 16px;
   font-weight: 400;
@@ -132,16 +137,16 @@ button {
   color: #000;
 }
 
-.basket {
+.basket-link {
   max-width: 48px;
   width: 100%;
   position: relative;
 }
-.basket img {
+.basket-link img {
   width: 100%;
   height: auto;
 }
-.basket .indicator-buy {
+.basket-link .indicator-buy {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -152,7 +157,7 @@ button {
   right: -10px;
   color: #fff;
 }
-.basket .indicator-buy--active {
+.basket-link .indicator-buy--active {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,7 +218,7 @@ button {
 }
 
 .description {
-  max-width: 345px;
+  max-width: 270px;
   width: 100%;
 }
 
@@ -353,7 +358,7 @@ button {
   width: 100%;
 }
 
-.radio input, .radio label {
+.radio label, .check-filter label {
   cursor: pointer;
 }
 
@@ -413,4 +418,90 @@ button {
 }
 
 /*КАТОЛОГ*/
+
+.products-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter {
+  max-width: 250px;
+  width: 100%;
+}
+
+.filter-wrapper {
+  margin-top: 15px;
+  box-shadow: 0 0 20px #000000;
+  border-radius: 15px;
+  padding-bottom: 20px;
+}
+
+.filter-item:not(:first-child) {
+  margin-top: 13px;
+}
+
+.title-filter {
+  padding: 20px;
+}
+
+.filter-block {
+  padding: 0 20px;
+}
+
+.btn-filter {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  padding: 0 20px;
+}
+
+.map {
+  position: relative;
+}
+
+/*КОРЗИНА*/
+
+.basket-flex {
+  display: flex;
+  gap: 90px;
+}
+
+.data-route-create {
+  margin-top: 15px;
+  padding: 25px 50px;
+  box-shadow: 0 0 20px #000;
+  border-radius: 15px;
+}
+
+.basket-data-route {
+  max-width: 327px;
+  width: 100%;
+}
+
+.clear-button {
+  position: relative;
+  right: 0;
+}
+
+.basket-body {
+  max-width: 900px;
+  width: 100%;
+}
+
+.basket-orders {
+  margin-top: 20px;
+}
+
+.basket-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.final-price span {
+  font-weight: bold;
+}
+
+
 

@@ -16,7 +16,7 @@ import Login from './pages/login/Login.jsx';
 import Logup from "./pages/logup/logup.jsx";
 import Footer from './components/footer/Footer.jsx';
 import Profile from "./pages/profile/Profile.jsx";
-
+import Basket from "./pages/basket/Basket.jsx";
 
 console.log("Проект в App")
 
@@ -25,7 +25,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className='main'>
-                
+
                 <Navbar/>
                 <div className='container'>
                     <Routes>
@@ -34,6 +34,7 @@ function App() {
                         <Route path='/login' Component={Login}/>
                         <Route path='/logup' Component={Logup}/>
                         <Route path='/profile' Component={Profile}/>
+                        <Route path='/basket' Component={Basket}/>
                     </Routes>
 
                 </div>
