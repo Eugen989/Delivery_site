@@ -13,7 +13,7 @@ const Home = () => {
         <div className="home">
             <div className="banner">
                 <div className="centring">
-                    <div className="banner-text">
+                    <div className="banner-text appearance">
                         <h1 className="title-1">
                             экспресс логистика
                         </h1>
