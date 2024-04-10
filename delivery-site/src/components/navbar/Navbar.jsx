@@ -11,7 +11,7 @@ function Navbar({ isMainPage }) {
                         </a>
                         <div className="menu">
                             <li className="menu-item">
-                                <a href="/" className="menu-link">Гланая</a>
+                                <a href="/" className="menu-link">Главная</a>
                             </li>
                             <li className="menu-item">
                                 <a href="/products" className="menu-link">
