@@ -1,0 +1,75 @@
+.header {
+  box-shadow: 0 0 20px #000;
+  padding: 20px 0;
+  flex: 0 0 auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.right-navbar {
+  display: flex;
+  gap: 120px;
+}
+
+.basket-link {
+  max-width: 48px;
+  width: 100%;
+  position: relative;
+}
+.basket-link img {
+  width: 100%;
+  height: auto;
+}
+.basket-link .indicator-buy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: none;
+  background: #DF3434;
+  border-radius: 50%;
+  top: -5px;
+  right: -10px;
+  color: #fff;
+}
+.basket-link .indicator-buy--active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-link .no-profile {
+  display: none;
+}
+.profile-link .yes-profile {
+  display: none;
+}
+.profile-link .yes-profile--active {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.profile-link .no-profile--active {
+  padding: 18px 20px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
