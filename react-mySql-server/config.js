@@ -5,5 +5,5 @@ module.exports = {
     DBPASSWORD: "root",
     DBNAME: "deliverydb",
 
-    kwt: "jwt-key"
+    jwt: "jwt-key"
 }

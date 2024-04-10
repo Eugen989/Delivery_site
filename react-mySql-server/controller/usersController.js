@@ -60,20 +60,25 @@ exports.signIn = (req, res) => {
         if(error) {
             console.log(400);
             response.status(400, error, res);
+
         } else if (rows.length <= 0) {
             console.log(401);
             response.status(401, "User is this email not registred", res);
+
         } else {
             const row = JSON.parse(JSON.stringify(rows));
+            
             row.map(rw => {
                 if(rw.email == req.body.email) {
                     const password = bscrypt.compareSync(req.body.password, rw.password);
+
                     if(password){
                         const token = jwt.sign({
                             userId: rw.id,
                             email: rw.email
                         }, config.jwt, {expiresIn: 120 * 120 });
                         response.status(200, {token: token}, res);
+
                     } else {
                         response.status(401, {message: "Пароль не верный"}, res);
                     }
