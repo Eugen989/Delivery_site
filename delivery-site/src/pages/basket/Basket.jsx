@@ -1,8 +1,20 @@
+import React, { useState } from 'react';
 import "./basket.module.css";
 import CardItem from "../../components/cardItem/CardItem.jsx";
-import {MyButton2} from "../../components/UI/button/MyButton.jsx";
+import { MyButton2 } from "../../components/UI/button/MyButton.jsx";
+import MapComponent from "../../components/map/Map.jsx"; // Изменили путь импорта
 
 const Basket = () => {
+    const [showMap, setShowMap] = useState(false);
+
+    const handleBuildRoute = () => {
+        setShowMap(true);
+    };
+
+    const handleCloseMap = () => {
+        setShowMap(false);
+    };
+
     return (
         <div className="basket mt-1">
             <div className="centring">
@@ -15,9 +27,17 @@ const Basket = () => {
                             <h3 className="title-3">
                                 Данные о маршруте
                             </h3>
-                            <button className="data-route-create text-2">
+                            <button className="data-route-create text-2" onClick={handleBuildRoute}>
                                 Построить маршрут
                             </button>
+                            {showMap && (
+                                <div className="map-overlay">
+                                    <div className="map-popup">
+                                        <MyButton2 className="close-button" onClick={handleCloseMap}>Закрыть</MyButton2>
+                                        <MapComponent />
+                                    </div>
+                                </div>
+                            )}
                         </div>
                         <div className="basket-body">
                             <button className="clear-button text-2">
@@ -34,15 +54,14 @@ const Basket = () => {
                                 <MyButton2 className="title-4">
                                     Оплатить
                                 </MyButton2>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+            
         </div>
-    )
-}
+    );
+};
 
 export default Basket;
