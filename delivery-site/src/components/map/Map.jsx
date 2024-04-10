@@ -12,29 +12,6 @@ const cities = {
 
 const MapComponent = () => {
     const [routes, setRoutes] = useState({});
-
-    useEffect(() => {
-        const canvas = document.getElementById('mapCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Draw cities with some padding
-        for (const city in cities) {
-            const { x, y } = cities[city];
-            ctx.fillStyle = 'black';
-            ctx.beginPath();
-            ctx.arc(x, y, 5, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.fillText(city, x + 10, y - 10);
-        }
-
-        canvas.addEventListener('click', handleClick);
-
-        return () => {
-            canvas.removeEventListener('click', handleClick);
-        };
-    }, []);
-
     function calculateDistance(cityA, cityB) {
         const deltaX = cityB.x - cityA.x;
         const deltaY = cityB.y - cityA.y;
@@ -101,6 +78,29 @@ const MapComponent = () => {
             }
         }
     }
+
+    useEffect(() => {
+        const canvas = document.getElementById('mapCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw cities with some padding
+        for (const city in cities) {
+            const { x, y } = cities[city];
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillText(city, x + 10, y - 10);
+        }
+
+        canvas.addEventListener('click', handleClick);
+
+        return () => {
+            canvas.removeEventListener('click', handleClick);
+        };
+    }, []);
+
 
     return (
         <>
