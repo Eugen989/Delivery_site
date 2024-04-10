@@ -173,8 +173,10 @@ const Home = () => {
                                 Доставка по всей России
                             </h2>
                             <p className="description-parameters text-2">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione id fugit atque totam similique, animi doloremque tempore repellendus, iste libero pariatur commodi voluptas est placeat veniam. Ducimus!
-                            </p>
+                            Мы гордимся тем, что обеспечиваем доставку по всей просторной России. 
+                            Независимо от того, где вы находитесь, мы гарантируем надежность и быстроту доставки. 
+                            Воспользуйтесь нашими услугами, 
+                            чтобы получить ваш товар в любой уголок России без лишних хлопот.</p>
                         </div>
                     </div>
                     <div className="parameter">
@@ -183,11 +185,13 @@ const Home = () => {
                         </div>
                         <div className="text-parth">
                             <h2 className="title-2">
-                                Доставка по всей России
+                                Доставим дешево и быстро
                             </h2>
                             <p className="description-parameters text-2">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione id fugit atque totam similique, animi doloremque tempore repellendus, iste libero pariatur commodi voluptas est placeat veniam. Ducimus!
-                            </p>
+                            Мы ценим ваше время и ваш бюджет, поэтому наша цель - предоставить вам дешевую и
+                             быструю доставку. Мы работаем над оптимизацией процессов, чтобы обеспечить эффективность 
+                             и экономию для вас. 
+                            Доверьте нам ваш заказ, и мы доставим его быстро и недорого.</p>
                         </div>
                     </div>
                 </div>
@@ -206,8 +210,9 @@ const Home = () => {
                                     Авто
                                 </h3>
                                 <p className="type-delivery-description text-2">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ducimus laborum consectetur repellat quas porro, nobis tempora impedit facere. In corporis eaque magni? Pariatur optio nam laudantium! Possimus, sunt amet!
-                                </p>
+                                Для тех, кто ценит комфорт и скорость, предлагаем услуги автомобильной доставки.
+                                 Наши автомобили готовы доставить ваш груз точно и вовремя. 
+                                Безопасность и надежность нашего автопарка вас приятно удивят.</p>
                             </div>
                         </div>
                         <div className="type-delivery">
@@ -219,8 +224,10 @@ const Home = () => {
                                     ЖД
                                 </h3>
                                 <p className="type-delivery-description text-2">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ducimus laborum consectetur repellat quas porro, nobis tempora impedit facere. In corporis eaque magni? Pariatur optio nam laudantium! Possimus, sunt amet!
-                                </p>
+                                Для масштабных перевозок и экономии времени и ресурсов воспользуйтесь 
+                                услугами железнодорожной доставки. 
+                                Надежность и эффективность железнодорожных маршрутов обеспечат 
+                                ваш груз оперативно и без срывов.</p>
                             </div>
                         </div>
                         <div className="type-delivery">
