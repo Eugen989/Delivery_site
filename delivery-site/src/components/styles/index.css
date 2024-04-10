@@ -114,6 +114,8 @@ input[type="radio"] {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
 }
 
 .appearance {
@@ -232,6 +234,8 @@ input[type="radio"] {
   background-attachment: fixed;
   color: #fff;
   height: 100vh;
+  position: relative;
+    z-index: 1;
 }
 
 .banner-text {
