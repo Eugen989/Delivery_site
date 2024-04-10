@@ -39,12 +39,12 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Добавление товаров
+                                Добавление товаров
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Удобный функционал позволяет быстро и просто добавлять вашу продукцию в нашу систему.
+                                Создавайте описания, загружайте фотографии, 
+                                устанавливайте цены - все для того, чтобы ваш товар был представлен максимально привлекательно для покупателей.
                                 </p>
                             </div>
                         </div>
@@ -54,12 +54,12 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Маршрутизация доставок
+                                Маршрутизация доставок
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Не беспокойтесь о доставке - наша система позволяет настроить маршруты доставок и 
+                                оптимизировать их для максимальной эффективности.
+                                 Следите за статусом каждой посылки и обеспечьте безупречный сервис вашим клиентам.
                                 </p>
                             </div>
                         </div>
@@ -69,12 +69,12 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Управление складами
+                                Управление складами
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Эффективное управление складами поможет вам оптимизировать запасы, отслеживать 
+                                поступления и отгрузки товаров, а также автоматизировать процессы инвентаризации. 
+                                Всегда имейте под рукой актуальную информацию о наличии и количество товаров на складе.
                                 </p>
                             </div>
                         </div>
@@ -84,12 +84,12 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Контроль за перевозкой
+                                Контроль за перевозкой
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Благодаря возможности контроля за перевозкой, вы можете отслеживать перемещение 
+                                товаров от склада к пункту назначения. 
+                                Будьте в курсе всех этапов доставки и обеспечьте безопасность и своевременность поставок.
                                 </p>
                             </div>
                         </div>
@@ -110,9 +110,9 @@ const Home = () => {
                                     Контроль за доставкой
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Отслеживайте маршрут вашего заказа в реальном времени! 
+                                Теперь вы можете узнать в каких городах побывал ваш заказ и где он сейчас находится. 
+                                Будьте в курсе и надежно контролируйте процесс доставки.
                                 </p>
                             </div>
                         </div>
@@ -122,12 +122,12 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Делать заказ товара
+                                    Делайте Заказ Товара
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Оформление заказа стало проще - выбирайте интересующий товар, добавляйте в корзину и 
+                                оформляйте доставку всего в несколько кликов. 
+                                Получите доступ к широкому ассортименту товаров и быстрому оформлению заказа.
                                 </p>
                             </div>
                         </div>
@@ -137,12 +137,11 @@ const Home = () => {
                             </div>
                             <div className="text-opportunity">
                                 <h3 className="title-3">
-                                    Выбирать маршрут
+                                Выбирайте Маршрут
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                Выберите удобный маршрут доставки! У нас представлены разные ценовые группы, влияющие на скорость доставки. 
+                                Оптимизируйте доставку под свои потребности и выбирайте удобный способ получения товара.
                                 </p>
                             </div>
                         </div>
@@ -155,9 +154,9 @@ const Home = () => {
                                     Несколько способов оплаты
                                 </h3>
                                 <p className="description-opportunity text-1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel nisi ratione
-                                    id fugit atque totam similique, animi doloremque tempore repellendus, iste libero
-                                    pariatur commodi voluptas est placeat veniam. Ducimus!
+                                У нас представлены различные способы оплаты, чтобы удовлетворить все ваши потребности. 
+                                Оплачивайте заказ удобным для вас способом - наличными, 
+                                банковской картой, онлайн-платежами и другими доступными вариантами.
                                 </p>
                             </div>
                         </div>
