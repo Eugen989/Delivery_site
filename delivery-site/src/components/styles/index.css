@@ -116,6 +116,21 @@ input[type="radio"] {
   margin: 0 auto;
 }
 
+.appearance {
+  animation: appearance 0.7s ease-in;
+}
+
+@keyframes appearance {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* FOOTER */
 
 .footer-wrapper {
@@ -214,6 +229,7 @@ input[type="radio"] {
   background-image: url("./images/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   color: #fff;
   height: 100vh;
 }
@@ -231,9 +247,7 @@ input[type="radio"] {
 
 .anchor {
   padding: 12px 32px;
-  /*background: #fff;*/
   border: 2px solid #2F3485;
-
   display: inline-flex;
   gap: 5px;
   color: #fff;
