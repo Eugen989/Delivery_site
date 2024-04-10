@@ -10,8 +10,11 @@ const cities = {
     "Литва": { x: 300, y: 400 }
 };
 
+const warehouses = ['Брянск', 'Москва']; // Список городов со складами
+
 const MapComponent = () => {
     const [routes, setRoutes] = useState({});
+    const [citySelected, setCitySelected] = useState(false);
     function calculateDistance(cityA, cityB) {
         const deltaX = cityB.x - cityA.x;
         const deltaY = cityB.y - cityA.y;
@@ -19,9 +22,14 @@ const MapComponent = () => {
     }
 
     function findRoutes(startCity, endCity) {
-        const shortestRoute = [startCity, endCity];
-        const mediumRoute = ["Москва", findRandomCity(["Москва", startCity]), startCity, endCity];
-        const longRoute = [startCity, "Москва", findRandomCity([startCity, "Москва"]), endCity];
+        let adjustedStartCity = startCity;
+        if (warehouses.includes(endCity)) {
+            adjustedStartCity = findRandomCity([endCity]); // Начинаем маршруты из другого города, если выбран город-склад
+        }
+
+        const shortestRoute = [adjustedStartCity, endCity];
+        const mediumRoute = ["Москва", findRandomCity(["Москва", adjustedStartCity]), adjustedStartCity, endCity];
+        const longRoute = [adjustedStartCity, "Москва", findRandomCity([adjustedStartCity, "Москва"]), endCity];
 
         const startCityCoords = cities[startCity];
         const endCityCoords = cities[endCity];
@@ -62,6 +70,10 @@ const MapComponent = () => {
     }
 
     function handleClick(event) {
+        if (citySelected) {
+            return; // Если уже выбран город, игнорируем дополнительные нажатия
+        }
+
         const rect = event.target.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
         const clickY = event.clientY - rect.top;
@@ -71,10 +83,11 @@ const MapComponent = () => {
             if (Math.abs(clickX - x) <= 10 && Math.abs(clickY - y) <= 10) {
                 const { shortestRoute, mediumRoute, longRoute } = findRoutes('Брянск', city);
                 setRoutes({ shortest: shortestRoute, medium: mediumRoute, long: longRoute });
-                drawPath(longRoute, 'red');
-                drawPath(mediumRoute, 'blue');
-                drawPath(shortestRoute, 'black');
-                
+                drawPath(longRoute, 'rgba(255, 0, 35, 0.37)');
+                drawPath(mediumRoute, 'rgba(41, 0, 255, 0.37)');
+                drawPath(shortestRoute, 'rgba(255, 217, 0, 0.62)');
+
+                setCitySelected(true); // Устанавливаем флаг выбора города
             }
         }
     }
@@ -99,7 +112,7 @@ const MapComponent = () => {
         return () => {
             canvas.removeEventListener('click', handleClick);
         };
-    }, []);
+    }, [citySelected]);
 
 
     return (
