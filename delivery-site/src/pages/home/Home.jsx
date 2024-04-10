@@ -239,8 +239,10 @@ const Home = () => {
                                     Авиа
                                 </h3>
                                 <p className="type-delivery-description text-2">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ducimus laborum consectetur repellat quas porro, nobis tempora impedit facere. In corporis eaque magni? Pariatur optio nam laudantium! Possimus, sunt amet!
-                                </p>
+                                Если вам нужна максимальная скорость и оперативность доставки, выбирайте 
+                                авиационную перевозку. Наша команда гарантирует быстрый и точный доставку вашего груза 
+                                к месту назначения. 
+                                Доверьтесь авиаперевозкам для мгновенных результатов.</p>
                             </div>
                         </div>
                     </div>
