@@ -1,15 +1,15 @@
 import "./navbar.css";
 
-function Navbar() {
+function Navbar({ isMainPage }) {
     return (
-        <div className="navbar">
-            <header className="header">
+        <div className="navbar text-3">
+            <header className={isMainPage ? 'header bg-none-head' : 'header bg-head'}>
                 <div className="centring">
                     <div className="header-flex">
                         <a href="/" className="logo">
-                            logo
+                            <img src="./images/лого.svg" alt=""/>
                         </a>
-                        <div className="menu text-3">
+                        <div className="menu">
                             <li className="menu-item">
                                 <a href="/" className="menu-link">Гланая</a>
                             </li>
@@ -29,7 +29,6 @@ function Navbar() {
                             </a>
                             <div className="profile-link">
                                 <a href="/login" className="no-profile no-profile--active">
-                                    <img src="images/no-profile.svg" alt=""/>
                                     Войти
                                 </a>
                                 <a href="/profile" className="yes-profile">

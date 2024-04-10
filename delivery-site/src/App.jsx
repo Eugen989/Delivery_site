@@ -21,12 +21,14 @@ import Basket from "./pages/basket/Basket.jsx";
 console.log("Проект в App")
 
 function App() {
-
+    const menuProps = {
+        isMainPage: window.location.pathname === '/' || window.location.pathname === ''
+    };
     return (
         <BrowserRouter>
             <div className='main'>
 
-                <Navbar/>
+                <Navbar {...menuProps}/>
                 <div className='container'>
                     <Routes>
                         <Route path='/' Component={Home}/>

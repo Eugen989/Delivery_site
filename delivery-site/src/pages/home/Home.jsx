@@ -1,22 +1,34 @@
 import "./home.module.css";
 
 const Home = () => {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset >= 100) {
+            document.querySelector('header').style.background = '#2F3485';
+        } else {
+            document.querySelector('header').style.background = 'none';
+        }
+    });
     return (
-        <div className="home">
-            <div className="centring">
-                <div className="banner">
-                    <h1 className="title-1">
-                        Сайт-сервис по управлению доставками готовых изделий
-                    </h1>
-                    <a href="#anchor" className="anchor">
-                        <p className="text-anchor text-2">
-                            Узнать подробнее
-                        </p>
-                        <img src="./images/pointer.svg" alt=""/>
-                    </a>
-                </div>
 
-                <div className="opportunities" id="anchor">
+        <div className="home">
+            <div className="banner">
+                <div className="centring">
+                    <div className="banner-text">
+                        <h1 className="title-1">
+                            экспресс логистика
+                        </h1>
+                        <a href="#anchor" className="anchor">
+                            <p className="text-anchor text-3">
+                                Узнать подробнее
+                            </p>
+                            <img src="./images/pointer.svg" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div className="centring">
+                <div className="opportunities mt-1" id="anchor">
                     <h2 className="title-2">
                         Возможности для продавцов
                     </h2>

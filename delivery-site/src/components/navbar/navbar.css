@@ -1,12 +1,20 @@
 .header {
-  box-shadow: 0 0 20px #000;
   padding: 20px 0;
   flex: 0 0 auto;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #ffffff;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.bg-none-head {
+  background: none;
+}
+
+.bg-head {
+  background: #2F3485;
 }
 
 .header-flex {
@@ -18,6 +26,27 @@
 .menu {
   display: flex;
   gap: 40px;
+}
+
+.menu-link, .no-profile {
+  position: relative;
+  padding: 5px 0;
+}
+
+.menu-link::after, .no-profile::after {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.menu-link:hover::after, .no-profile:hover::after {
+  width: 100%;
 }
 
 .right-navbar {
@@ -32,7 +61,7 @@
 }
 .basket-link img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .basket-link .indicator-buy {
   position: absolute;
@@ -41,13 +70,18 @@
   display: none;
   background: #DF3434;
   border-radius: 50%;
-  top: -5px;
+  top: 5px;
   right: -10px;
   color: #fff;
 }
 .basket-link .indicator-buy--active {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.profile-link {
+  display: flex;
   align-items: center;
 }
 
@@ -64,12 +98,6 @@
   border-radius: 50%;
 }
 .profile-link .no-profile--active {
-  padding: 18px 20px;
-  border: 1px solid #000;
-  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 700;
 }
