@@ -212,6 +212,8 @@ input[type="radio"] {
 
 .banner {
   background-image: url("./images/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   height: 100vh;
 }
