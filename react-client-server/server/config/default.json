@@ -1,5 +1,0 @@
-{
-  "serverPort" : 5000,
-  "dbUrl": "mongodb+srv://kruglikeugen:bAvBqlDeZKjLHx2O@cluster0.zj4dx7l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-  "secretKey": "mern-secket-key"
-}
