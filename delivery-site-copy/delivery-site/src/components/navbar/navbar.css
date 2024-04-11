@@ -1,0 +1,103 @@
+.header {
+  padding: 20px 0;
+  flex: 0 0 auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.bg-none-head {
+  background: none;
+}
+
+.bg-head {
+  background: #2F3485;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu-link, .no-profile {
+  position: relative;
+  padding: 5px 0;
+}
+
+.menu-link::after, .no-profile::after {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.menu-link:hover::after, .no-profile:hover::after {
+  width: 100%;
+}
+
+.right-navbar {
+  display: flex;
+  gap: 120px;
+}
+
+.basket-link {
+  max-width: 48px;
+  width: 100%;
+  position: relative;
+}
+.basket-link img {
+  width: 100%;
+  height: 100%;
+}
+.basket-link .indicator-buy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: none;
+  background: #DF3434;
+  border-radius: 50%;
+  top: 5px;
+  right: -10px;
+  color: #fff;
+}
+.basket-link .indicator-buy--active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile-link .no-profile {
+  display: none;
+}
+.profile-link .yes-profile {
+  display: none;
+}
+.profile-link .yes-profile--active {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.profile-link .no-profile--active {
+  display: flex;
+  align-items: center;
+}

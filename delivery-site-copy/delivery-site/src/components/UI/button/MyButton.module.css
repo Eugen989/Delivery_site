@@ -1,0 +1,10 @@
+.myBtn1, .myBtn2 {
+    padding: 12px 32px;
+    font-weight: bold;
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+.myBtn2 {
+    padding: 8px 32px;
+}
