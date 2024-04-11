@@ -25,5 +25,11 @@ const InputCheck = ({ children, ...props }) => {
     );
 };
 
+const InputEdit = ({ children, ...props }) => {
+    return (
+        <input type="checkbox" {...props} className={classes.InputEdit} />
+    );
+};
 
-export { MyInput, RadioBtn, InputFilter, InputCheck };
+
+export { MyInput, RadioBtn, InputFilter, InputCheck, InputEdit };

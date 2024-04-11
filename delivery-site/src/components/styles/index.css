@@ -114,8 +114,6 @@ input[type="radio"] {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  position: sticky;
-  top: 0;
 }
 
 .appearance {
@@ -231,11 +229,12 @@ input[type="radio"] {
   background-image: url("./images/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   color: #fff;
   height: 100vh;
   position: relative;
-    z-index: 1;
+  z-index: 1;
 }
 
 .banner-text {
@@ -439,7 +438,17 @@ input[type="radio"] {
   text-align: center;
 }
 
-/*КАТОЛОГ*/
+.card-group a {
+  display: block;
+  padding: 86px 0;
+  max-width: 909px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 20px #000000;
+  border-radius: 15px;
+}
 
 /*КОРЗИНА*/
 
@@ -485,5 +494,72 @@ input[type="radio"] {
   font-weight: bold;
 }
 
+/*EDIT*/
 
+.edit-block .parameters {
+  display: flex;
+  gap: 65px;
+}
+
+.foto-edit {
+  max-width: 310px;
+  width: 100%;
+}
+
+.foto-edit .media {
+  width: 310px;
+  height: 238px;
+}
+
+.foto-edit .media img{
+  width: 100%;
+  height: auto;
+}
+
+.custom-file-upload {
+  display: block;
+  text-align: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 36px;
+  transition: 0.2s;
+}
+
+.custom-file-upload:hover {
+  color: #3c58bd;
+  transition: 0.2s;
+}
+
+.edit-body {
+  max-width: 400px;
+  width: 100%;
+}
+
+.edit-body input {
+  display: block;
+}
+
+.edit-body textarea{
+  margin-top: 10px;
+  background: #D9D9D9;
+  display: block;
+  border-radius: 15px;
+  padding: 15px 20px;
+  resize: none;
+  max-width: 400px;
+  width: 100%;
+}
+
+.edit-btn {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-route .edit-body {
+  margin-top: 30px;
+}
 

@@ -31,25 +31,6 @@ const Products = () => {
                                         <InputFilter placeholder="До"/>
                                     </div>
                                 </div>
-                                <div className="manufacturer-filter filter-item">
-                                    <p className="title-filter text-2">
-                                        Производитель
-                                    </p>
-                                    <div className="filter-block">
-                                        <div className="check-filter">
-                                            <InputCheck id="1"/>
-                                            <label htmlFor="1">РосТех и тд</label>
-                                        </div>
-                                        <div className="check-filter">
-                                            <InputCheck id="2"/>
-                                            <label htmlFor="2">РосТех и тд</label>
-                                        </div>
-                                        <div className="check-filter">
-                                            <InputCheck id="3"/>
-                                            <label htmlFor="3">РосТех и тд</label>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="size-filter filter-item">
                                     <p className="title-filter text-2">
                                         Размер

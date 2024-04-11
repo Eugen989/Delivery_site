@@ -17,6 +17,8 @@ import Logup from "./pages/logup/logup.jsx";
 import Footer from './components/footer/Footer.jsx';
 import Profile from "./pages/profile/Profile.jsx";
 import Basket from "./pages/basket/Basket.jsx";
+import EditProduct from "./pages/editProduct/EditProduct.jsx";
+import CreateProduct from "./pages/createProduct/CreateProduct.jsx";
 
 console.log("Проект в App")
 
@@ -37,6 +39,8 @@ function App() {
                         <Route path='/logup' Component={Logup}/>
                         <Route path='/profile' Component={Profile}/>
                         <Route path='/basket' Component={Basket}/>
+                        <Route path='/edit' Component={EditProduct}/>
+                        <Route path='/create' Component={CreateProduct}/>
                     </Routes>
 
                 </div>

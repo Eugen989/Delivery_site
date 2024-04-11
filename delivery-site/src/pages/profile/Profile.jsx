@@ -3,6 +3,8 @@ import CardItem from "../../components/cardItem/CardItem.jsx";
 import MapComponent from "../../components/map/Map.jsx";
 
 const Profile = () => {
+    const status = false;
+
     return (
         <div className="profile">
             <div className="centring">
@@ -17,7 +19,7 @@ const Profile = () => {
                                     id_0000001
                                 </h2>
                                 <p className="status-profile text-4">
-                                    <span>Статус:</span>покупатель
+                                    <span>Статус:</span>{status? name = `Покупатель` : name = `Продавец`}
                                 </p>
                             </div>
                         </div>
@@ -44,11 +46,11 @@ const Profile = () => {
                     </div>
                     <div className="el-order el-order--active mt-1">
                         <h2 className="title-2">
-                            Заголовок
+                            {status? `История заказов` : `Cписок товаров`}
                         </h2>
                         <div className="card-group mt-2">
+                            {status? <CardItem></CardItem> : (<a href="/create"> Добавить товар </a>)}
                             <CardItem></CardItem>
-                            <MapComponent></MapComponent>
                         </div>
                     </div>
                 </div>
