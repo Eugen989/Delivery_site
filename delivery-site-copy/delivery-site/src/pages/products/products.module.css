@@ -1,0 +1,36 @@
+.productsFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter {
+    max-width: 250px;
+    width: 100%;
+}
+
+.filterWrapper {
+    margin-top: 15px;
+    box-shadow: 0 0 20px #000000;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+.filterItem:not(:first-child) {
+    margin-top: 13px;
+}
+
+.titleFilter {
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.filterBlock {
+    padding: 10px 20px 10px 20px;
+}
+
+.btnFilter {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    padding: 0 20px;
+}

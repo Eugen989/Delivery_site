@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+input, textarea {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+.text-1 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-2, .text-3, .text-4 {
+  font-weight: 500;
+}
+
+.text-2 {
+  font-size: 18px;
+}
+
+.text-3 {
+  font-size: 24px;
+}
+
+.text-4 {
+  font-size: 32px;
+}
+
+.title-1 {
+  font-size: 96px;
+  text-transform: uppercase;
+}
+
+.title-2 {
+  font-size: 64px;
+}
+
+.title-3 {
+  font-size: 32px;
+}
+
+.title-4 {
+  font-size: 24px;
+}
+
+.mt-1 {
+  margin-top: 120px;
+}
+
+.mt-2 {
+  margin-top: 50px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+  padding: 39px 0;
+  background: #2F3485;
+  color: #fff;
+  margin-top: 120px;
+}
+
+.centring {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.appearance {
+  animation: appearance 0.7s ease-in;
+}
+
+@keyframes appearance {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+

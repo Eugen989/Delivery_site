@@ -1,0 +1,82 @@
+.banner {
+    background-image: url("./images/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.bannerText {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.anchor {
+    padding: 12px 32px;
+    border: 2px solid #2F3485;
+    display: inline-flex;
+    gap: 5px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.anchor:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #2F3485;
+    display: block;
+    transition: 0.3s;
+
+    z-index: -1;
+}
+
+.anchor:hover:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.opportunities {
+    text-align: center;
+}
+
+.opportunityGroup {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.opportunityGroup .media img {
+    display: block;
+    margin: 0 auto;
+}
+
+.textOpportunity, .descriptionOpportunity {
+    margin-top: 10px;
+}
+
+.parameter {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 90px;
+}
+
+.parameter:nth-child(even) {
+    flex-direction: row;
+}

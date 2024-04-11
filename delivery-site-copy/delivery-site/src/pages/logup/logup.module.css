@@ -1,0 +1,63 @@
+.loginWrapper {
+    text-align: center;
+}
+
+.formBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.formBlock form {
+    max-width: 350px;
+    width: 100%;
+}
+
+.formBlock input{
+    display: block;
+}
+
+.btnForm {
+    margin-top: 10px;
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnFormIn {
+    justify-content: end;
+}
+
+.formBlock input:not(:first-child), .radioInputs{
+    margin-top: 15px;
+}
+
+.radioInputs {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.radio {
+    display: flex;
+    gap: 5px;
+}
+
+.radio label, .checkFilter label, .linkLogup, .linkLogin {
+    cursor: pointer;
+}
+
+.linkLogup {
+    display: block;
+    margin-top: 25px;
+}
+
+.linkLogin {
+    font-weight: bold;
+}

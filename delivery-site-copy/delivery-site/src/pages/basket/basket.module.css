@@ -1,0 +1,34 @@
+.basketFlex {
+    display: flex;
+    gap: 90px;
+}
+
+.clearButton {
+    position: relative;
+    right: 0;
+}
+
+.basketBody {
+    max-width: 900px;
+    width: 100%;
+}
+
+.basketOrders {
+    margin-top: 20px;
+}
+
+.leftBasket {
+    margin-top: 40px;
+}
+
+.finalPrice span {
+    font-weight: bold;
+}
+
+.linkPay {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    color: #ffffff;
+    background: #4CAF50;
+}
