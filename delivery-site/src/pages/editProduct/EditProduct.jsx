@@ -1,4 +1,4 @@
-import "./editProduct.css";
+import classes from "./editProduct.module.css";
 import {InputEdit} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
 import React from "react";
@@ -15,19 +15,19 @@ const EditProduct = () => {
     return (
         <div className="edit">
             <div className="centring">
-                <div className="edit-wrapper mt-1">
-                   <h2 className="title-2">Редактирование товара</h2>
-                    <div className="edit-block mt-2">
+                <div className="editWrapper mt-1">
+                    <h2 className="title-2">Редактирование товара</h2>
+                    <div className={`${classes.editBlock} mt-2`}>
                         <form action="#" method="post" encType="multipart/form-data">
-                            <div className="parameters">
-                                <div className="foto-edit">
-                                    <div className="media">
+                            <div className={classes.parameters}>
+                                <div className={classes.fotoEdit}>
+                                    <div className={classes.media}>
                                         <img src="./images/edit.png" alt=""/>
                                     </div>
                                     <input type="file" id="real-input" hidden onChange={handleFileChange}/>
-                                    <label htmlFor="real-input" className="custom-file-upload">{fileName}</label>
+                                    <label htmlFor="real-input" className={classes.customFileUpload}>{fileName}</label>
                                 </div>
-                                <div className="edit-body">
+                                <div className={classes.editBody}>
                                     <InputEdit type="text" name="name" placeholder="Наименование товара" required/>
                                     <InputEdit type="text" name="size" placeholder="Размер товара" required/>
                                     <InputEdit type="number" name="mass" placeholder="Масса товара" required/>
@@ -38,15 +38,15 @@ const EditProduct = () => {
 
                                 </div>
                             </div>
-                            <div className="edit-route mt-2">
+                            <div className={`${classes.editRoute} mt-2`}>
                                 <h3 className="title-3">
                                     Данные о маршрутах
                                 </h3>
-                                <div className="edit-body">
+                                <div className={classes.editBody}>
                                     <InputEdit type="text" name="from" placeholder="Откуда" required/>
                                     <InputEdit type="text" name="to" placeholder="Куда" required/>
                                 </div>
-                                <div className="edit-btn">
+                                <div className={classes.editBtn}>
                                     <MyButton2 type="button" id="cancelButton">Отменить</MyButton2>
                                     <MyButton2 type="submit">Сохранить</MyButton2>
                                 </div>

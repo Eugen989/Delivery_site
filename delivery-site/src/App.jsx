@@ -19,6 +19,7 @@ import Profile from "./pages/profile/Profile.jsx";
 import Basket from "./pages/basket/Basket.jsx";
 import EditProduct from "./pages/editProduct/EditProduct.jsx";
 import CreateProduct from "./pages/createProduct/CreateProduct.jsx";
+import MakingOrder from "./pages/makingOrder/MakingOrder.jsx";
 
 console.log("Проект в App")
 
@@ -41,6 +42,7 @@ function App() {
                         <Route path='/basket' Component={Basket}/>
                         <Route path='/edit' Component={EditProduct}/>
                         <Route path='/create' Component={CreateProduct}/>
+                        <Route path='/making' Component={MakingOrder}/>
                     </Routes>
 
                 </div>

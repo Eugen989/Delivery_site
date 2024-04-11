@@ -1,0 +1,55 @@
+.topProfile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftTopProfile {
+    display: flex;
+    gap: 34px;
+}
+
+.leftTopProfile .media {
+    max-width: 180px;
+    width: 100%;
+}
+
+.leftTopProfile .media img {
+    width: 100%;
+}
+
+.statusProfile span, .contactItem span {
+    font-weight: bold;
+}
+
+.exitProfile {
+    font-weight: bold;
+    color: #EA1010;
+}
+
+.contactItem:not(:first-child) {
+    margin-top: 12px;
+}
+
+.elOrder {
+    display: none;
+}
+
+.elOrderActive {
+    display: block;
+}
+
+.elOrder h2 {
+    text-align: center;
+}
+
+.cardGroup a {
+    display: block;
+    padding: 86px 0;
+    max-width: 909px;
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 20px #000000;
+    border-radius: 15px;
+}

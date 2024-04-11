@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./products.module.css";
+import classes from "./products.module.css";
 import CardItem from "../../components/cardItem/CardItem";
 import {InputFilter, InputCheck} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
@@ -15,47 +15,47 @@ const Products = () => {
         <div className="products mt-1">
 
             <div className="centring">
-                <div className="products-flex">
-                    <div className="filter">
+                <div className={classes.productsFlex}>
+                    <div className={classes.filter}>
                         <h3 className="title-3">
                             Фильтр
                         </h3>
-                        <div className="filter-wrapper">
+                        <div className={classes.filterWrapper}>
                             <form action="">
-                                <div className="price-filter filter-item">
-                                    <p className="title-filter text-2">
+                                <div className={classes.filterItem}>
+                                    <p className={`${classes.titleFilter} text-3`}>
                                         Цена
                                     </p>
-                                    <div className="filter-block">
+                                    <div className={classes.filterBlock}>
                                         <InputFilter placeholder="От"/>
                                         <InputFilter placeholder="До"/>
                                     </div>
                                 </div>
-                                <div className="size-filter filter-item">
-                                    <p className="title-filter text-2">
+                                <div className={classes.filterItem}>
+                                    <p className={`${classes.titleFilter} text-3`}>
                                         Размер
                                     </p>
-                                    <div className="filter-block">
+                                    <div className={classes.filterBlock}>
                                         <InputFilter placeholder="От"/>
                                         <InputFilter placeholder="До"/>
                                     </div>
                                 </div>
-                                <div className="massa-filter filter-item">
-                                    <p className="title-filter text-2">
+                                <div className={classes.filterItem}>
+                                    <p className={`${classes.titleFilter} text-3`}>
                                         Масса
                                     </p>
-                                    <div className="filter-block">
+                                    <div className={classes.filterBlock}>
                                         <InputFilter placeholder="От"/>
                                         <InputFilter placeholder="До"/>
                                     </div>
                                 </div>
-                                <div className="btn-filter">
+                                <div className={classes.btnFilter}>
                                     <MyButton2 type="submit">Применить</MyButton2>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div className="card-group">
+                    <div className="cardGroup">
                         <select name="" id="">
                             <option value="">
                                 По названию

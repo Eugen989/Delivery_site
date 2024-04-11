@@ -1,4 +1,4 @@
-import "./logup.module.css";
+import classes from "./logup.module.css";
 import { MyInput } from "../../components/UI/input/MyInput.jsx";
 import { MyButton1 } from "../../components/UI/button/MyButton.jsx";
 import { useState } from "react";
@@ -28,48 +28,48 @@ const Logup = () => {
         <div className="logup">
             {isRegistering ?
                 <div className="centring">
-                <div className="login-wrapper mt-1">
+                <div className={`${classes.loginWrapper} mt-1`}>
                     <h2 className="title-3">
                         Регистрация
                     </h2>
-                    <form action="" method="POST" className="form-block">
-                        <MyInput type="email" placeholder="Электронная почта" />
-                        <MyInput placeholder="Имя пользователя" />
-                        <MyInput type="password" placeholder="Пароль" />
-                        <MyInput type="password" placeholder="Повторить пароль" />
-                        <div className="radio-inputs">
-                            <div className="radio radio-1">
+                    <form action="" method="POST" className={classes.formBlock}>
+                        <MyInput type="email" placeholder="Электронная почта" required/>
+                        <MyInput placeholder="Имя пользователя" required/>
+                        <MyInput type="password" placeholder="Пароль" required/>
+                        <MyInput type="password" placeholder="Повторить пароль" required/>
+                        <div className={classes.radioInputs}>
+                            <div className={classes.radio}>
                                 <RadioBtn id="r-1" name="userType" value="buyer" />
                                 <label htmlFor="r-1">Я покупатель</label>
                             </div>
-                            <div className="radio radio-2">
+                            <div className={classes.radio}>
                                 <RadioBtn id="r-2" name="userType" value="seller" />
                                 <label htmlFor="r-2">Я продавец</label>
                             </div>
                         </div>
-                        <div className="btn-form btn-form-in">
+                        <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
                             <MyButton1 type="submit">
                                 Отправить
                             </MyButton1>
                         </div>
                     </form>
-                    <a onClick={toggleForm} className="link-logup">У меня уже есть аккаунт</a>
+                    <a onClick={toggleForm} className={classes.linkLogup}>У меня уже есть аккаунт</a>
                 </div>
             </div>
         :
             <div className="centring">
-                <div className="login-wrapper mt-1">
+                <div className={`${classes.loginWrapper} mt-1`}>
                     <h2 className="title-3">
                         Авторизация
                     </h2>
-                    <div className="form-block">
+                    <div className={classes.formBlock}>
                         <form onSubmit={handleSubmit}>
-                            <div className="input-block">
-                                <MyInput value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Электронная почта" />
-                                <MyInput value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Пароль" />
+                            <div className="inputBlock">
+                                <MyInput value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Электронная почта" required/>
+                                <MyInput value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Пароль" required/>
                             </div>
-                            <div className="btn-form">
-                                <a onClick={toggleForm} className="link-login">
+                            <div className={classes.btnForm}>
+                                <a onClick={toggleForm} className={classes.linkLogin}>
                                     У меня нет аккаунта
                                 </a>
                                 <MyButton1 type="submit">

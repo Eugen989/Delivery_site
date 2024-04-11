@@ -1,0 +1,40 @@
+.makingWrapper {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+label {
+    display: block;
+}
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #449d48;
+}
+
+.paymentUponReceipt {
+    display: flex;
+    gap: 10px;
+}
+
+.makingBody {
+    display: flex;
+    gap: 30px;
+}
