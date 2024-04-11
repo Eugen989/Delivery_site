@@ -28,7 +28,7 @@ function Navbar({ isMainPage }) {
                                 <span className="indicator-buy text-1">3</span>
                             </a>
                             <div className="profile-link">
-                                <a href="/login" className="no-profile no-profile--active">
+                                <a href="/logup" className="no-profile no-profile--active">
                                     Войти
                                 </a>
                                 <a href="/profile" className="yes-profile">
