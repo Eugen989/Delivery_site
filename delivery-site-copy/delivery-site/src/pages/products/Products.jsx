@@ -10,8 +10,7 @@ const Products = () => {
         { id: 2, title: "Драники",warehouse:"Брянск",massa:0.750,size:17,body: "Сделано из картошки",price:799,price_now:988},
         { id: 3, title: "Блины",warehouse:"Москва",massa:0.250,size:54,body: "С добавлением картошки",price:997,price_now:898 },
     ]);
-    let userData = JSON.parse(localStorage.getItem('UserData'));
-    console.log(userData)
+
     return (
         <div className="products mt-1">
 
