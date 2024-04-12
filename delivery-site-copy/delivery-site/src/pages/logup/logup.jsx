@@ -23,8 +23,8 @@ const Logup = () => {
         userType: ''
       });
 
-    const [val, setVal] = useState('buyer')
-    const f = e => {
+    const [valueSelectRegistering, setVal] = useState('buyer')
+    const handlerChange = e => {
         setVal(e.target.value)
     }
 
@@ -97,7 +97,7 @@ const Logup = () => {
                         <MyInput type="password" placeholder="Повторить пароль" required/>
                         <div className={classes.choice}>
                             <label htmlFor="shippingMethod">Выберите:</label>
-                            <InputSelect id="shippingMethod" name="shippingMethod" required onChange={f}>
+                            <InputSelect id="shippingMethod" name="shippingMethod" required onChange={handlerChange}>
                                 <option value="buyer">Я покупатель</option>
                                 <option value="seller">Я продавец</option>
                             </InputSelect>
