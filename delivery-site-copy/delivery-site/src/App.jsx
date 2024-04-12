@@ -26,6 +26,9 @@ import axios from "axios";
 
 console.log("Проект в App")
 
+// Сохраняем значение UseId в localStorage
+localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}));
+console.log(JSON.parse(localStorage.getItem('UserData')))
 function App() {
     const menuProps = {
         isMainPage: window.location.pathname === '/' || window.location.pathname === ''
@@ -79,4 +82,4 @@ function App() {
     )
 }
 
-export default App;
+export {App};

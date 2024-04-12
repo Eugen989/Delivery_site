@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 const Logup = () => {
+
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [dataAuth, setDataAuth] = useState([]);
@@ -43,6 +44,10 @@ const Logup = () => {
         }
     };
 
+    let userData = JSON.parse(localStorage.getItem('UserData'));
+    userData.userId = 1
+    console.log(userData)
+    localStorage.setItem('UserData', JSON.stringify(userData))
     const handleAccept = async (e) => {
         e.preventDefault();
         try {
@@ -52,7 +57,9 @@ const Logup = () => {
                     password: formData.password
                 }
             });
+
             console.log(response.data);
+            window.location.href=('/')
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
         }
@@ -140,6 +147,7 @@ const Logup = () => {
                         <a onClick={toggleForm} className={classes.linkLogup}>У меня уже есть аккаунт</a>
                     </div>
                 </div>
+
             }
         </div>
     );
