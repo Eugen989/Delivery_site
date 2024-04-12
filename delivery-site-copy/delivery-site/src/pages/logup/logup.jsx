@@ -102,7 +102,7 @@ const Logup = () => {
                                 <RadioBtn
                                     text="Я продавец"
                                     name="choice"
-                                    value="seller"
+                                    value="salesman"
                                     onChange={handlerChange}
                                     checked={valueSelectRegistering === 'salesman'}
                                 />
