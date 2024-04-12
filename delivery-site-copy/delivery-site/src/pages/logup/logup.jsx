@@ -104,7 +104,7 @@ const Logup = () => {
                                     name="choice"
                                     value="seller"
                                     onChange={handlerChange}
-                                    checked={valueSelectRegistering === 'seller'}
+                                    checked={valueSelectRegistering === 'salesman'}
                                 />
                             </div>
                             <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
