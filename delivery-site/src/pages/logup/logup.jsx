@@ -18,7 +18,7 @@ const Logup = () => {
         setIsRegistering(prevState => !prevState);
     };
 
-    const [val, setVal] = useState('buyer')
+    const [valueSelectRegistering, setVal] = useState('buyer')
     const f = e => {
         setVal(e.target.value)
     }
