@@ -6,7 +6,7 @@ import axios from "axios";
 
 const RadioBtn = ({ id, name, value }) => {
     return (
-        <input type="radio" id={id} name={name} value={value} />
+        <input type="radio" id={id} name={name} value={value} required/>
     );
 };
 
@@ -19,7 +19,8 @@ const Logup = () => {
         name: '',
         secondName: '',
         email: '',
-        password: ''
+        password: '',
+        userType: ''
       });
 
     const handleChange = (e) => {
@@ -32,7 +33,8 @@ const Logup = () => {
             const response = await axios.post('http://localhost:5000/api/auth/signUp', {
                 name: formData.name,
                 email: formData.email,
-                password: formData.password
+                password: formData.password,
+                userType: formData.userType
             });
             console.log(response.data);
             // Дополнительные действия после успешного запроса
@@ -89,11 +91,11 @@ const Logup = () => {
                         <MyInput type="password" placeholder="Повторить пароль" required/>
                         <div className={classes.radioInputs}>
                             <div className={classes.radio}>
-                                <RadioBtn id="r-1" name="userType" value="buyer" />
+                                <RadioBtn id="r-1" name="userType" value="buyer"/>
                                 <label htmlFor="r-1">Я покупатель</label>
                             </div>
                             <div className={classes.radio}>
-                                <RadioBtn id="r-2" name="userType" value="seller" />
+                                <RadioBtn id="r-2" name="userType" value="saleman"/>
                                 <label htmlFor="r-2">Я продавец</label>
                             </div>
                         </div>

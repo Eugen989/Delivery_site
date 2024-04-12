@@ -21,7 +21,7 @@ exports.getAllUsers = (req, res) => {
 
 exports.signUp = (req, res) => {
     db.query("SELECT `id`, `email`, `name` FROM `users` WHERE `email` = '" + req.body.email + "'", (error, rows, fields) => {
-        console.log(rows);
+        console.log("signUp - ", req.body);
         if(error) {
             response.status(400, error, res);
         } else if(typeof rows !== 'undefined' && rows.length > 0) {
@@ -33,7 +33,6 @@ exports.signUp = (req, res) => {
                 }
             });
         } else {
-            console.log(req.body);
             const email = req.body.email;
             const name = req.body.name;
             const salt = bscrypt.genSaltSync(2);
