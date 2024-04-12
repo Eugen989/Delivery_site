@@ -8,7 +8,6 @@ const db = require("../settings/db");
 const config = require("../config");
 
 exports.getAllUsers = (req, res) => {
-
     db.query("SELECT * FROM `users`", (error, rows, fields) => {
         if(error) {
             console.log(404, error, res);
@@ -16,8 +15,28 @@ exports.getAllUsers = (req, res) => {
             response.status(200, rows, res);
         }
     })
-
 }
+
+exports.getAllBuyers = (req, res) => {
+    db.query("SELECT * FROM `buyer`", (error, rows, fields) => {
+        if(error) {
+            console.log(404, error, res);
+        } else {
+            response.status(200, rows, res);
+        }
+    })
+}
+
+exports.getAllSalesmans = (req, res) => {
+    db.query("SELECT * FROM `salesman`", (error, rows, fields) => {
+        if(error) {
+            console.log(404, error, res);
+        } else {
+            response.status(200, rows, res);
+        }
+    })
+}
+
 
 exports.signUp = (req, res) => {
     db.query("SELECT `id`, `email`, `name` FROM `users` WHERE `email` = '" + req.body.email + "'", (error, rows, fields) => {
@@ -26,12 +45,16 @@ exports.signUp = (req, res) => {
             console.log("Ошибка - 400");
             response.status(400, error, res);
         } else if(typeof rows !== 'undefined' && rows.length > 0) {
+            let flag = true;
             const row = JSON.parse(JSON.stringify(rows));
             row.map(rw => {
                 if(rw.email == req.body.email) {
-                    console.log(`Пользователь с таким email - ${rw.email} уже зарегистрирован`);
-                    response.status(302, {message: `Пользователь с таким email - ${rw.email} уже зарегистрирован`}, res);
-                    return true;
+                    if(flag) {
+                        console.log(`Пользователь с таким email - ${rw.email} уже зарегистрирован`);
+                        response.status(302, {message: `Пользователь с таким email - ${rw.email} уже зарегистрирован`}, res);
+                        flag = false;
+                        return true; // Добавьте return здесь
+                    }
                 }
             });
         } else {
@@ -40,37 +63,48 @@ exports.signUp = (req, res) => {
             const salt = bscrypt.genSaltSync(2);
             const password = bscrypt.hashSync(req.body.password, salt);
 
-            const raiting = "3";
-            const reviews = "5";
-            const status = "1";
-            const id_user = "20";
+            let sql = "INSERT INTO `users`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "'); ";
+            if(req.body.userType == "buyer") {
+                const delivery = "0";
+                const reviews = "0";
 
-            // INSERT INTO `users` (`name`, `email`, `password`) VALUES( 'euax', 'azsf@gmail.com', 'q12');
-            // INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('3', '5', '1', '20');
-
-            let sql = "INSERT INTO `users`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "');";
-            console.log("Дошло до отправки в sql");
-            //let sql = "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
-            db.query(sql, (error, result) => {
-                if(error) {
-                    console.log("Ошибка регистрации - 400");
-                    response.status(400, {message: "Ошибка регистрации"}, res);
-                } else {
-                    if(req.body == "buyer")
-                    {
-                        sql = "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
-                        db.query(sql, (next_error, next_result) => {
-                            console.log("Успешная регистрация");
-                            response.status(200, {message: "Регистрация прошла успешно", result}, res);
-                        })
+                sql += "INSERT INTO `buyer`(`delivery`, `reviews`, `id_user`) VALUES('" + delivery + "', '" + reviews + "', LAST_INSERT_ID());" 
+                db.query(sql, (next_error, next_result) => {
+                    console.log(sql);
+                    if(error) {
+                        console.log("Ошибка регистрации покупателя - 400");
+                        response.status(400, {message: "Ошибка регистрации покупателя"}, res);
                     }
-                    console.log("Ошибка следующей регистрации - 400");
-                    response.status(400, {message: "Ошибка 2 этапа регистрации"}, res);
-                }
-            });
+                    else {
+                        console.log("Успешная регистрация покупателя");
+                        response.status(200, {message: "Регистрация прошла успешно"}, res);
+                    }
+                });
+            } else if(req.body.userType == "salesman") {
+                const raiting = "0";
+                const reviews = "0";
+                const status = "1";
+
+                sql += "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', LAST_INSERT_ID());" 
+                db.query(sql, (next_error, next_result) => {
+                    console.log(sql);
+                    if(error) {
+                        console.log("Ошибка регистрации продавца - 400");
+                        response.status(400, {message: "Ошибка регистрации продавца"}, next_result);
+                    }
+                    else {
+                        console.log("Успешная регистрация продавца");
+                        response.status(200, {message: "Регистрация прошла успешно"}, res);
+                    }
+                });
+            } else {
+                console.log("Ошибка регистрации: Неопределенный тип пользователя - 400")
+                response.status(400, {message: "Ошибка регистрации: Неопределенный тип пользователя"}, res);
+            }
         }
     });
 };
+
 
 exports.signIn = (req, res) => {
 
@@ -80,8 +114,8 @@ exports.signIn = (req, res) => {
             response.status(400, error, res);
 
         } else if (rows.length <= 0) {
-            console.log(401);
-            response.status(401, "User is this email not registred", res);
+            console.log("Этот пользователь не был зарегестрирован 401");
+            response.status(401, "Этот пользователь не был зарегестрирован", res);
 
         } else {
             const row = JSON.parse(JSON.stringify(rows));
@@ -95,8 +129,9 @@ exports.signIn = (req, res) => {
                             userId: rw.id,
                             email: rw.email
                         }, config.jwt, {expiresIn: 120 * 120 });
-                        response.status(200, {token: token}, res);
+
                         console.log("Вы зашли под своим акаунтом");
+                        response.status(200, {token: token}, res);
 
                     } else {
                         response.status(401, {message: "Пароль не верный"}, res);

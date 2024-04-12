@@ -98,7 +98,7 @@ const Logup = () => {
                             <label htmlFor="shippingMethod">Выберите:</label>
                             <InputSelect id="shippingMethod" name="shippingMethod" required onChange={handlerChange}>
                                 <option value="buyer">Я покупатель</option>
-                                <option value="seller">Я продавец</option>
+                                <option value="salesman">Я продавец</option>
                             </InputSelect>
                         </div>
                         <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
