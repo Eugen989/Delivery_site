@@ -4,6 +4,10 @@ import CardItem from "../../components/cardItem/CardItem";
 import {InputFilter} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
 
+// localStorage.clear();
+// localStorage.setItem('UserData', JSON.stringify({userId: 1, userName: '', userType: ''}));
+// console.log(JSON.parse(localStorage.getItem('UserData')))
+
 const Products = () => {
     const [cards, setCards] = useState([
         { id: 1, title: "Картошечка",warehouse:"Минск",massa:54,size:34,body: "Очень очень вкусно",price:777,price_now:888 },
