@@ -54,10 +54,14 @@
 
 .choice {
     margin-top: 15px;
-    align-self: start;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-self: start;
+}
+
+.choice label {
+    cursor: pointer;
 }
 
 .linkLoginOut {
