@@ -18,6 +18,11 @@ const Logup = () => {
         setIsRegistering(prevState => !prevState);
     };
 
+    const [val, setVal] = useState('buyer')
+    const f = e => {
+        setVal(e.target.value)
+    }
+
     return (
         <div className="logup">
             {isRegistering ?
@@ -33,7 +38,7 @@ const Logup = () => {
                         <MyInput type="password" placeholder="Повторить пароль" required/>
                         <div className={classes.choice}>
                             <label htmlFor="shippingMethod">Выберите:</label>
-                            <InputSelect id="shippingMethod" name="shippingMethod" required>
+                            <InputSelect id="shippingMethod" name="shippingMethod" required onChange={f}>
                                 <option value="buyer">Я покупатель</option>
                                 <option value="seller">Я продавец</option>
                             </InputSelect>
