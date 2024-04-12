@@ -67,3 +67,69 @@ exports.createCheque = (req, res) => {
         }
     });
 }
+
+
+
+exports.getWarehouse = (req, res) => {
+    console.log(req.body);
+    let sql = "INSERT INTO `cheque`(`id_product`, `id_salesman`, `date`, `id_buyer`, `tax`) VALUES(" + req.body.id_product + " , " + req.body.id_salesman + 
+    " , \"" + req.body.date + "\", " + req.body.id_buyer + ", " + req.body.tax + ");";
+    db.query(sql, (error, rows, fields) => {
+        if(error) {
+            console.log("Ошибка создания склада - 400");
+            response.status(400, {message: "Ошибка чека - 400"}, res);
+        }
+        else {
+            console.log("Успешное создание склада");
+            response.status(200, {message: "Чек создался"}, res);
+        }
+    });
+}
+
+exports.getPickUpPoint = (req, res) => {
+    console.log(req.body);
+    let sql = "INSERT INTO `cheque`(`id_product`, `id_salesman`, `date`, `id_buyer`, `tax`) VALUES(" + req.body.id_product + " , " + req.body.id_salesman + 
+    " , \"" + req.body.date + "\", " + req.body.id_buyer + ", " + req.body.tax + ");";
+    db.query(sql, (error, rows, fields) => {
+        if(error) {
+            console.log("Ошибка создания склада - 400");
+            response.status(400, {message: "Ошибка чека - 400"}, res);
+        }
+        else {
+            console.log("Успешное создание склада");
+            response.status(200, {message: "Чек создался"}, res);
+        }
+    });
+}
+
+exports.getProduct = (req, res) => {
+    console.log(req.body);
+    let sql = "INSERT INTO `cheque`(`id_product`, `id_salesman`, `date`, `id_buyer`, `tax`) VALUES(" + req.body.id_product + " , " + req.body.id_salesman + 
+    " , \"" + req.body.date + "\", " + req.body.id_buyer + ", " + req.body.tax + ");";
+    db.query(sql, (error, rows, fields) => {
+        if(error) {
+            console.log("Ошибка создания склада - 400");
+            response.status(400, {message: "Ошибка чека - 400"}, res);
+        }
+        else {
+            console.log("Успешное создание склада");
+            response.status(200, {message: "Чек создался"}, res);
+        }
+    });
+}
+
+exports.getCheque = (req, res) => {
+    console.log(req.body);
+    let sql = "INSERT INTO `cheque`(`id_product`, `id_salesman`, `date`, `id_buyer`, `tax`) VALUES(" + req.body.id_product + " , " + req.body.id_salesman + 
+    " , \"" + req.body.date + "\", " + req.body.id_buyer + ", " + req.body.tax + ");";
+    db.query(sql, (error, rows, fields) => {
+        if(error) {
+            console.log("Ошибка создания склада - 400");
+            response.status(400, {message: "Ошибка чека - 400"}, res);
+        }
+        else {
+            console.log("Успешное создание склада");
+            response.status(200, {message: "Чек создался"}, res);
+        }
+    });
+}

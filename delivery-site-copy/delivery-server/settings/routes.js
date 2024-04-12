@@ -16,5 +16,9 @@ module.exports = (app) => {
     app.route("/api/product/createWarehouse").post(productController.createWarehouse);
     app.route("/api/product/createPickUpPoint").post(productController.createPickUpPoint);
     app.route("/api/product/createProduct").post(productController.createProduct);
-    app.route("/api/product/cheque").post(productController.createCheque);
+    app.route("/api/product/createCheque").post(productController.createCheque);
+    app.route("/api/product/getWarehouse").get(productController.getWarehouse);
+    app.route("/api/product/getPickUpPoint").get(productController.getPickUpPoint);
+    app.route("/api/product/getProduct").get(productController.getProduct);
+    app.route("/api/product/getCheque").get(productController.getCheque);
 }
