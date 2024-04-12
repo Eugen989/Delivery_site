@@ -42,7 +42,7 @@ const Logup = () => {
                 userType: valueSelectRegistering
             });
             console.log(response.data);
-            // Дополнительные действия после успешного запроса
+            window.location.href=('/profile')
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
             // Дополнительные действия при ошибке запроса
@@ -59,6 +59,7 @@ const Logup = () => {
                 }
             });
             console.log(response.data);
+            window.location.href=('/')
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
         }
@@ -98,7 +99,7 @@ const Logup = () => {
                             <label htmlFor="shippingMethod">Выберите:</label>
                             <InputSelect id="shippingMethod" name="shippingMethod" required onChange={handlerChange}>
                                 <option value="buyer">Я покупатель</option>
-                                <option value="seller">Я продавец</option>
+                                <option value="salesman">Я продавец</option>
                             </InputSelect>
                         </div>
                         <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
