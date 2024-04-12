@@ -29,7 +29,7 @@ const Logup = () => {
             {isRegistering ?
                 <div className="centring">
                 <div className={`${classes.loginWrapper} mt-1`}>
-                    <h2 className="title-3">
+                    <h2 className={`${classes.titleForm} title-3`}>
                         Регистрация
                     </h2>
                     <form action="" method="POST" className={classes.formBlock}>
@@ -53,33 +53,35 @@ const Logup = () => {
                             </MyButton1>
                         </div>
                     </form>
-                    <a onClick={toggleForm} className={classes.linkLogup}>У меня уже есть аккаунт</a>
+                    <a onClick={toggleForm} className={classes.linkLoginOut}>У меня уже есть аккаунт</a>
                 </div>
             </div>
         :
             <div className="centring">
                 <div className={`${classes.loginWrapper} mt-1`}>
-                    <h2 className="title-3">
+                    <h2 className={`${classes.titleForm} title-3`}>
                         Авторизация
                     </h2>
                     <div className={classes.formBlock}>
                         <form onSubmit={handleSubmit}>
                             <div className="inputBlock">
-                                <MyInput value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Электронная почта" required/>
-                                <MyInput value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Пароль" required/>
+                                <MyInput value={email} onChange={(e) => setEmail(e.target.value)} type="email"
+                                         placeholder="Электронная почта" required/>
+                                <MyInput value={pass} onChange={(e) => setPass(e.target.value)} type="password"
+                                         placeholder="Пароль" required/>
                             </div>
                             <div className={classes.btnForm}>
-                                <a onClick={toggleForm} className={classes.linkLogin}>
-                                    У меня нет аккаунта
-                                </a>
                                 <MyButton1 type="submit">
                                     Отправить
                                 </MyButton1>
                             </div>
                         </form>
                     </div>
+                    <a onClick={toggleForm} className={classes.linkLoginOut}>
+                        У меня нет аккаунта
+                    </a>
                 </div>
-            </div>                 
+            </div>
             }
         </div>
     );

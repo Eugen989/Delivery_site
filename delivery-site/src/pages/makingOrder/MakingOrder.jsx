@@ -1,7 +1,12 @@
 import classes from "./makingOrder.module.css"
+import {InputCheck, InputSelect} from "../../components/UI/input/MyInput.jsx";
+import {MyButton1} from "../../components/UI/button/MyButton.jsx";
 import Map from "../../components/map/Map.jsx";
+import React, { useState } from 'react';
 
 const MakingOrder = () => {
+    const [resChecked, setChecked] = useState(true)
+
     return (
         <div className="makingOrder">
             <div className="centring">
@@ -9,30 +14,27 @@ const MakingOrder = () => {
                     <h2 className="title-2">Оформление заказа</h2>
                     <div className={`${classes.makingBody} mt-2`}>
                         <div className="formBlock">
-                            <form action="#" method="post">
+                            <form action="#" method="post" className={classes.formBody}>
 
                                 <label htmlFor="shippingMethod">Способ доставки</label>
-                                <select id="shippingMethod" name="shippingMethod">
+                                <InputSelect id="shippingMethod" name="shippingMethod">
                                     <option value="cheap">Дешевый</option>
                                     <option value="fast">Быстрый</option>
-                                </select>
+                                </InputSelect>
 
-                                <label htmlFor="deliverySity">Город доставки</label>
-                                <select id="deliverySity" name="deliverySity">
-                                    {/*Варианты доставки*/}
-                                </select>
                                 <label htmlFor="deliveryPoint">Пункт выдачи</label>
-                                <select id="deliveryPoint" name="deliveryPoint">
+                                <InputSelect id="deliveryPoint" name="deliveryPoint">
                                     {/*Варианты доставки*/}
-                                </select>
-                                <div className={classes.paymentUponReceipt}>
-                                    <label htmlFor="payOnDelivery">
-                                        Оплата при получении:
-                                    </label>
-                                    <input type="checkbox" id="payOnDelivery" name="payOnDelivery" checked/>
-                                </div>
+                                </InputSelect>
 
-                                <button type="submit">Подтвердить заказ</button>
+                                <div className={classes.paymentUponReceipt}>
+                                    <InputCheck isChecked={resChecked} onChange={setChecked}>
+                                        Оплата при получении:
+                                    </InputCheck>
+                                </div>
+                                <MyButton1 type="submit">
+                                    Подтвердить заказ
+                                </MyButton1>
                             </form>
                         </div>
                         <div className="map">
