@@ -39,7 +39,7 @@ const Logup = () => {
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
-                userType: val
+                userType: valueSelectRegistering
             });
             console.log(response.data);
             // Дополнительные действия после успешного запроса
@@ -51,7 +51,6 @@ const Logup = () => {
 
     const handleAccept = async (e) => {
         e.preventDefault();
-        setFormData({ ...formData, email: formData.email, password: formData.password });
         try {
             const response = await axios.get('http://localhost:5000/api/auth/signIn', {
                 params: {
