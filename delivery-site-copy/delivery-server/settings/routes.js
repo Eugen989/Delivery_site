@@ -13,5 +13,5 @@ module.exports = (app) => {
     app.route("/api/auth/signUp").post(usersController.signUp)
     app.route("/api/auth/signIn").get(usersController.signIn)
 
-    app.route("/api/product/create").get(productController.signIn)
+    // app.route("/api/product/create").get(productController.)
 }
