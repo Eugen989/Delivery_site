@@ -17,6 +17,13 @@
 
 .radioBtn {
     visibility: hidden;
+    position: absolute;
+}
+
+.labelRadio {
+    position: relative;
+    display: flex;
+    gap: 10px;
 }
 
 .customRadio {
