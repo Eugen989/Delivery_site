@@ -3,17 +3,25 @@
     width: 100%;
     border-radius: 30px;
     margin-top: 30px;
-    box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #3c58bd;
     display: flex;
-    background: #D9D9D9;
+    background: #f0f0f0;
+    border: 2px solid #3c58bd;
+}
+
+.media {
+    border-right: 2px solid #3c58bd;
+    max-width: 300px;
+    width: 100%;
 }
 
 .media img {
+    width: 100%;
     height: 100%;
 }
 
 .textCard {
-    padding: 35px 40px;
+    padding: 25px 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -22,6 +30,11 @@
 .description {
     max-width: 270px;
     width: 100%;
+    padding-right: 5px;
+}
+
+.priceBlock {
+    width: 185px;
 }
 
 .price {
@@ -37,4 +50,23 @@
     text-decoration: line-through;
     font-size: 16px;
     margin-left: 5px;
+}
+
+.priceBlock button, a {
+    margin-top: 10px;
+}
+
+.linkEdit {
+    padding: 12px 32px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: #3c58bd;
+    color: #ffffff;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.linkEdit:hover {
+    background: #2F3485;
+    transition: 0.2s;
 }
