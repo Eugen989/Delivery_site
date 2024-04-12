@@ -23,6 +23,11 @@ const Logup = () => {
         userType: ''
       });
 
+    const [val, setVal] = useState('buyer')
+    const f = e => {
+        setVal(e.target.value)
+    }
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -34,7 +39,7 @@ const Logup = () => {
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
-                userType: formData.userType
+                userType: val
             });
             console.log(response.data);
             // Дополнительные действия после успешного запроса
@@ -92,13 +97,7 @@ const Logup = () => {
                         <MyInput type="password" placeholder="Повторить пароль" required/>
                         <div className={classes.choice}>
                             <label htmlFor="shippingMethod">Выберите:</label>
-                            <InputSelect 
-                            id="shippingMethod" 
-                            name="userType" 
-                            value={formData.userType} 
-                            onChange={handleChange} 
-                            required
-                            >
+                            <InputSelect id="shippingMethod" name="shippingMethod" required onChange={f}>
                                 <option value="buyer">Я покупатель</option>
                                 <option value="seller">Я продавец</option>
                             </InputSelect>
