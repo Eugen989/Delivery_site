@@ -49,14 +49,18 @@ exports.signUp = (req, res) => {
             // INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('3', '5', '1', '20');
 
             let sql = "INSERT INTO `users`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "');";
-            sql += "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
+            //let sql = "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
             db.query(sql, (error, result) => {
                 if(error) {
                     console.log("Ошибка регистрации - 400");
                     response.status(400, {message: "Ошибка регистрации"}, res);
                 } else {
-                    console.log("Успешная регистрация");
-                    response.status(200, {message: "Регистрация прошла успешно", result}, res);
+                    sql = "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
+                    db.query(sql, (next_error, next_result) => {
+                        console.log("Успешная регистрация");
+                        response.status(200, {message: "Регистрация прошла успешно", result}, res);
+                    })
+                    response.status(400, {message: "Ошибка 2 этапа регистрации"}, res);
                 }
             });
         }

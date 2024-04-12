@@ -1,5 +1,19 @@
 .loginWrapper {
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.titleForm {
+    background: #ffffff;
+    position: relative;
+    padding: 10px;
+    z-index: 5;
+    top: 28px;
 }
 
 .formBlock {
@@ -7,7 +21,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    padding: 30px 15px 40px 15px;
+    border: 3px solid #000000;
+    max-width: 350px;
+    width: 100%;
 }
 
 .formBlock form {
@@ -24,8 +41,7 @@
     max-width: 350px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: end;
 }
 
 .btnFormIn {
@@ -36,28 +52,34 @@
     margin-top: 15px;
 }
 
-.radioInputs {
-    max-width: 350px;
-    width: 100%;
+.choice {
+    margin-top: 15px;
+    align-self: start;
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
 }
 
-.radio {
-    display: flex;
-    gap: 5px;
-}
-
-.radio label, .checkFilter label, .linkLogup, .linkLogin {
+.linkLoginOut {
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    background: #ffffff;
+    position: relative;
+    bottom: 25px;
     cursor: pointer;
 }
 
-.linkLogup {
+.linkLoginOut:after {
+    content: '';
     display: block;
-    margin-top: 25px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: 0.3s;
 }
 
-.linkLogin {
-    font-weight: bold;
+.linkLoginOut:hover:after {
+    width: 100%;
+    transition: 0.3s;
 }

@@ -1,35 +1,64 @@
 import React from "react";
 import classes from "./MyInput.module.css";
 
-const MyInput = ({ children, ...props }) => {
+const MyInput = ({ ...props }) => {
     return (
         <input type="text" {...props} className={classes.myInput} />
     );
 };
 
-const RadioBtn = ({ children, ...props }) => {
+const RadioBtn = ({id, text, name, onChange, checked, value}) => {
+
     return (
-        <input type="radio" {...props} className={classes.radioBtn} />
+        <label htmlFor="men">
+            <input
+                className={classes.radioBtn}
+                type="radio"
+                name={name}
+                id={id}
+                value={value}
+                onChange={onChange}
+                checked={checked}
+            />
+            <span className={classes.customRadio}></span>
+            {text}
+        </label>
     );
 };
 
-const InputFilter = ({ children, ...props }) => {
+const InputFilter = ({ ...props }) => {
     return (
         <input type="number" {...props} className={classes.inputFilter} />
     );
 };
 
-const InputCheck = ({ children, ...props }) => {
+const InputCheck = ({ children, isChecked, onChange }) => {
     return (
-        <input type="checkbox" {...props} className={classes.InputCheck} />
+        <label className={classes.inputCheck_label}>
+            <input
+                type="checkbox"
+                className={classes.inputCheck}
+                checked={isChecked}
+                onChange={(event) => onChange(event.target.checked)}
+            />
+            <span>{children}</span>
+        </label>
     );
 };
 
-const InputEdit = ({ children, ...props }) => {
+const InputEdit = ({...props}) => {
     return (
-        <input type="checkbox" {...props} className={classes.InputEdit} />
+        <input type="checkbox" {...props} className={classes.InputEdit}/>
+    );
+};
+
+const InputSelect = ({children, ...props}) => {
+    return (
+        <select {...props} className={classes.inputSelect}>
+            {children}
+        </select>
     );
 };
 
 
-export { MyInput, RadioBtn, InputFilter, InputCheck, InputEdit };
+export { MyInput, RadioBtn, InputFilter, InputCheck, InputEdit, InputSelect };

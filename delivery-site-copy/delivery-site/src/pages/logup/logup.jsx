@@ -1,5 +1,5 @@
 import classes from "./logup.module.css";
-import { MyInput } from "../../components/UI/input/MyInput.jsx";
+import { MyInput, InputSelect } from "../../components/UI/input/MyInput.jsx";
 import { MyButton1 } from "../../components/UI/button/MyButton.jsx";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
@@ -25,7 +25,7 @@ const Logup = () => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,6 +46,7 @@ const Logup = () => {
 
     const handleAccept = async (e) => {
         e.preventDefault();
+        setFormData({ ...formData, email: formData.email, password: formData.password });
         try {
             const response = await axios.get('http://localhost:5000/api/auth/signIn', {
                 params: {
@@ -89,15 +90,18 @@ const Logup = () => {
                         <MyInput type="email" placeholder="Электронная почта" name="email" value={formData.email} onChange={handleChange} required/>
                         <MyInput type="password" placeholder="Пароль" name="password" value={formData.password} onChange={handleChange} required/>
                         <MyInput type="password" placeholder="Повторить пароль" required/>
-                        <div className={classes.radioInputs}>
-                            <div className={classes.radio}>
-                                <RadioBtn id="r-1" name="userType" value="buyer"/>
-                                <label htmlFor="r-1">Я покупатель</label>
-                            </div>
-                            <div className={classes.radio}>
-                                <RadioBtn id="r-2" name="userType" value="saleman"/>
-                                <label htmlFor="r-2">Я продавец</label>
-                            </div>
+                        <div className={classes.choice}>
+                            <label htmlFor="shippingMethod">Выберите:</label>
+                            <InputSelect 
+                            id="shippingMethod" 
+                            name="userType" 
+                            value={formData.userType} 
+                            onChange={handleChange} 
+                            required
+                            >
+                                <option value="buyer">Я покупатель</option>
+                                <option value="seller">Я продавец</option>
+                            </InputSelect>
                         </div>
                         <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
                             <MyButton1 type="submit">
