@@ -3,6 +3,7 @@
 module.exports = (app) => {
     const indexController = require("../controller/indexController");
     const usersController = require("../controller/usersController")
+    const productController = require("../controller/productController");
 
     app.route("/ap").get(indexController.pushFront)
     //app.route("/").get(indexController.index);
@@ -11,4 +12,6 @@ module.exports = (app) => {
     app.route("/api/salesmans").get(usersController.getAllSalesmans)
     app.route("/api/auth/signUp").post(usersController.signUp)
     app.route("/api/auth/signIn").get(usersController.signIn)
+
+    app.route("/api/product/create").get(productController.signIn)
 }
