@@ -16,8 +16,21 @@
 }
 
 .radioBtn {
-    font-size: 18px;
-    font-weight: bold;
+    visibility: hidden;
+}
+
+.customRadio {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #f0f0f0;
+    display: inline-block;
+}
+
+.radioBtn:checked + span {
+    border: 2px solid #3c58bd;
+    background: #3c58bd;
 }
 
 .inputCheck_label {

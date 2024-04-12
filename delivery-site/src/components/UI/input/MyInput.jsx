@@ -7,9 +7,22 @@ const MyInput = ({ ...props }) => {
     );
 };
 
-const RadioBtn = ({ ...props }) => {
+const RadioBtn = ({id, text, name, onChange, checked, value}) => {
+
     return (
-        <input type="radio" {...props} className={classes.radioBtn} />
+        <label htmlFor="men">
+            <input
+                className={classes.radioBtn}
+                type="radio"
+                name={name}
+                id={id}
+                value={value}
+                onChange={onChange}
+                checked={checked}
+            />
+            <span className={classes.customRadio}></span>
+            {text}
+        </label>
     );
 };
 

@@ -52,21 +52,12 @@
     margin-top: 15px;
 }
 
-.radioInputs {
-    max-width: 350px;
-    width: 100%;
+.choice {
+    margin-top: 15px;
+    align-self: start;
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.radio {
-    display: flex;
-    gap: 5px;
-}
-
-.radio label, .checkFilter label, .linkLogup, .linkLogin {
-    cursor: pointer;
+    align-items: center;
+    gap: 10px;
 }
 
 .linkLoginOut {
@@ -91,33 +82,4 @@
 .linkLoginOut:hover:after {
     width: 100%;
     transition: 0.3s;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-input[type="radio"] + label {
-    display: inline-block;
-    padding-left: 25px;
-    line-height: 20px;
-    cursor: pointer;
-    position: relative;
-}
-
-input[type="radio"] + label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    margin-top: -7px;
-    border: 1px solid #2F3485;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-}
-
-input[type="radio"]:checked + label::before {
-    background-color: #2F3485;
 }
