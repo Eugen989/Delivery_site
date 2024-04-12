@@ -4,6 +4,13 @@ import CardItem from "../../components/cardItem/CardItem.jsx";
 const Profile = () => {
     const status = false;
 
+    function exit() {
+        localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}))
+        window.location.href=('/logup')
+    }
+
+    console.log("Test Data - ", JSON.parse(localStorage.getItem('TestData')));
+
     return (
         <div className="profile">
             <div className="centring">
@@ -23,7 +30,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="text-4">
-                            <span className={classes.exitProfile}>Выйти</span>
+                            <span className={classes.exitProfile} onClick={exit}>Выйти</span>
                         </div>
                     </div>
                     <div className="bottomProfile mt-2">

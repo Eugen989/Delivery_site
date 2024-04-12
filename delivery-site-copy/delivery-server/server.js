@@ -23,6 +23,7 @@ app.get("/api/stocks", (req, res) => {
             price: "326"
         }
     ]
+    // express.response.status(200, {message: "123"}, res);
     res.send(stocks);
 })
 

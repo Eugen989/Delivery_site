@@ -27,7 +27,7 @@ import axios from "axios";
 console.log("Проект в App");
 
 // localStorage.clear();
-// console.log(JSON.parse(localStorage.getItem('UserData')));
+console.log("User data - ", JSON.parse(localStorage.getItem('UserData')));
 
 
 function App() {
@@ -35,15 +35,15 @@ function App() {
         isMainPage: window.location.pathname === '/' || window.location.pathname === ''
     };
 
-    // const [dataAuth, setDataAuth] = useState([]);
+    const [dataAuth, setDataAuth] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:5000/api/users")
-    //     .then((response) => {
-    //     setDataAuth(response.data.values);
-    //     console.log(response.data);
-    //     });
-    // }, [])
+    useEffect(() => {
+        axios.get("http://localhost:5000/api/stocks")
+        .then((response) => {
+        // setDataAuth(response.data.values);
+        console.log("Данные с сервера - ", response.data);
+        });
+    }, [])
 
     return (
         <BrowserRouter>
