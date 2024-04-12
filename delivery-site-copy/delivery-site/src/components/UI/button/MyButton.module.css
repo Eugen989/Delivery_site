@@ -1,10 +1,15 @@
 .myBtn1, .myBtn2 {
     padding: 12px 32px;
     font-weight: bold;
-    background: #D9D9D9;
     border-radius: 15px;
+    background-color: #3c58bd;
+    color: #ffffff;
+    transition: 0.2s;
+    display: block;
+    font-size: 16px;
 }
 
-.myBtn2 {
-    padding: 8px 32px;
+.myBtn1:hover, .myBtn2:hover {
+    background: #2F3485;
+    transition: 0.2s;
 }

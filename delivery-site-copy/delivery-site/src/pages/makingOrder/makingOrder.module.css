@@ -2,7 +2,7 @@
     display: block;
 }
 
-form {
+.formBody {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -11,22 +11,6 @@ form {
 }
 label {
     display: block;
-}
-select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #449d48;
 }
 
 .paymentUponReceipt {
@@ -38,3 +22,4 @@ button:hover {
     display: flex;
     gap: 30px;
 }
+

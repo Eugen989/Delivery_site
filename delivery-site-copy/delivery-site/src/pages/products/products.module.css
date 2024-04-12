@@ -1,6 +1,7 @@
 .productsFlex {
     display: flex;
     justify-content: space-between;
+    margin-top: 160px;
 }
 
 .filter {
@@ -19,8 +20,13 @@
     margin-top: 13px;
 }
 
+.filterItem:first-child .titleFilter {
+    border-top: none;
+}
+
 .titleFilter {
     padding: 10px 20px 10px 20px;
+    border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
 }
 

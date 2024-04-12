@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./products.module.css";
 import CardItem from "../../components/cardItem/CardItem";
-import {InputFilter, InputCheck} from "../../components/UI/input/MyInput.jsx";
+import {InputFilter} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
 
 const Products = () => {
