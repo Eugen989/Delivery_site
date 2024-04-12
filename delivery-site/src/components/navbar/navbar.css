@@ -85,19 +85,13 @@
   align-items: center;
 }
 
-.profile-link .no-profile {
-  display: none;
-}
-.profile-link .yes-profile {
-  display: none;
-}
-.profile-link .yes-profile--active {
+.profile-link {
   display: block;
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
-.profile-link .no-profile--active {
+.profile-link {
   display: flex;
   align-items: center;
 }

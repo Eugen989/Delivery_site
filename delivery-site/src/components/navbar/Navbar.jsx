@@ -1,6 +1,6 @@
 import "./navbar.css";
 
-function Navbar({ isMainPage }) {
+function Navbar({ isMainPage}) {
     return (
         <div className="navbar text-3">
             <header className={isMainPage ? 'header bg-none-head' : 'header bg-head'}>
