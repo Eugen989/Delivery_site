@@ -24,10 +24,11 @@ import MakingOrder from "./pages/makingOrder/MakingOrder.jsx";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 
-console.log("Проект в App")
+console.log("Проект в App");
 
+// localStorage.clear();
+// console.log(JSON.parse(localStorage.getItem('UserData')));
 
-// Сохраняем значение UseId в localStorage
 
 function App() {
     const menuProps = {
@@ -82,4 +83,4 @@ function App() {
     )
 }
 
-export default {App};
+export default App;
