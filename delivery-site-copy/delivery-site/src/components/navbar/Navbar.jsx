@@ -2,8 +2,6 @@ import "./navbar.css";
 
 function Navbar({ isMainPage }) {
 
-    const useId = localStorage.getItem('useId')
-
     return (
         <div className="navbar text-3">
             <header className={isMainPage ? 'header bg-none-head' : 'header bg-head'}>
@@ -31,15 +29,12 @@ function Navbar({ isMainPage }) {
                                 <span className="indicator-buy text-1">3</span>
                             </a>
                             <div className="profile-link">
-                                {useId ?
-                                    <a href="/profile" className="yes-profile">
-                                        <img src="images/avatar-profile.png" alt=""/>
-                                    </a>
-                                    :
-                                    <a href="/logup" className="no-profile no-profile--active">
-                                        Войти
-                                    </a>
-                                }
+                                <a href="/logup" className="no-profile no-profile--active">
+                                    Войти
+                                </a>
+                                <a href="/profile" className="yes-profile">
+                                    <img src="images/avatar-profile.png" alt=""/>
+                                </a>
                             </div>
                         </div>
                     </div>
