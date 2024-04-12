@@ -8,7 +8,7 @@ const Profile = () => {
     return (
         <div className="profile">
             <div className="centring">
-                <div className="profileWrapper mt-1">
+                <div className={classes.profileWrapper}>
                     <div className={classes.topProfile}>
                         <div className={classes.leftTopProfile}>
                             <div className="media">
@@ -23,12 +23,11 @@ const Profile = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className={`${classes.exitProfile} text-4`}>Выйти</div>
+                        <div className="text-4">
+                            <span className={classes.exitProfile}>Выйти</span>
+                        </div>
                     </div>
                     <div className="bottomProfile mt-2">
-                        <h3 className="titile-3">
-
-                        </h3>
                         <ul className="contact text-3">
                             <li className={classes.contactItem}>
                                 <span>Номер телефона:</span> не задано
@@ -49,7 +48,7 @@ const Profile = () => {
                             {status? `История заказов` : `Cписок товаров`}
                         </h2>
                         <div className={`${classes.cardGroup} mt-2`}>
-                            {status? <CardItem></CardItem> : (<a href="/create"> Добавить товар </a>)}
+                            {status? <CardItem></CardItem> : (<a href="/create" className={classes.linkCreateProduct}> Добавить товар </a>)}
                             <CardItem></CardItem>
                         </div>
                     </div>

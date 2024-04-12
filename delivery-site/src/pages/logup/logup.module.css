@@ -1,5 +1,19 @@
 .loginWrapper {
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.titleForm {
+    background: #ffffff;
+    position: relative;
+    padding: 10px;
+    z-index: 5;
+    top: 28px;
 }
 
 .formBlock {
@@ -7,7 +21,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    padding: 30px 15px 40px 15px;
+    border: 3px solid #000000;
+    max-width: 350px;
+    width: 100%;
 }
 
 .formBlock form {
@@ -24,8 +41,7 @@
     max-width: 350px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: end;
 }
 
 .btnFormIn {
@@ -53,11 +69,55 @@
     cursor: pointer;
 }
 
-.linkLogup {
-    display: block;
-    margin-top: 25px;
+.linkLoginOut {
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    background: #ffffff;
+    position: relative;
+    bottom: 25px;
+    cursor: pointer;
 }
 
-.linkLogin {
-    font-weight: bold;
+.linkLoginOut:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: 0.3s;
+}
+
+.linkLoginOut:hover:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    padding-left: 25px;
+    line-height: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin-top: -7px;
+    border: 1px solid #2F3485;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #2F3485;
 }

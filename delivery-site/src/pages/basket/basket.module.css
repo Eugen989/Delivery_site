@@ -13,10 +13,6 @@
     width: 100%;
 }
 
-.basketOrders {
-    margin-top: 20px;
-}
-
 .leftBasket {
     margin-top: 40px;
 }
@@ -28,7 +24,14 @@
 .linkPay {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 24px;
+    padding: 12px 32px;
+    font-weight: bold;
+    background-color: #3c58bd;
     color: #ffffff;
-    background: #4CAF50;
+    transition: 0.2s;
+}
+
+.linkPay:hover {
+    background: #2F3485;
+    transition: 0.2s;
 }

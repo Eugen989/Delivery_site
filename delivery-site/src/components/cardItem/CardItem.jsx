@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./cardItem.module.css";
+import {MyButton2} from "../UI/button/MyButton.jsx";
 
 const CardItem = (props) => {
     const { title,warehouse, massa, size, body, price, price_now} = props;
@@ -27,16 +28,25 @@ const CardItem = (props) => {
                             Описание:{body}
                         </p>
                     </div>
-                    <div className="priceBlock">
+                    <div className={classes.priceBlock}>
                         <p className={classes.price}>
                             Цена: <span className={classes.numberPrice}>
                                 {price_now} ₽
                             </span>
                             <span className={classes.salePrice}>{price} ₽</span>
                         </p>
-                        <div className="buy-btn">
+                        <MyButton2>
                             Купить
-                        </div>
+                        </MyButton2>
+
+                        <a href="/edit" className={classes.linkEdit}>
+                            Изменить
+                        </a>
+
+                        <MyButton2>
+                            Удалить
+                        </MyButton2>
+
                     </div>
                 </div>
             </div>

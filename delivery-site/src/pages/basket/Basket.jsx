@@ -51,7 +51,7 @@ const Basket = () => {
                             <button className={`${classes.clearButton} text-2`}>
                                 Очистить корзину
                             </button>
-                            <div className={classes.basketOrders}>
+                            <div>
                                 <CardItem></CardItem>
                                 <CardItem></CardItem>
                             </div>
