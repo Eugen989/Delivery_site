@@ -23,11 +23,13 @@ exports.signUp = (req, res) => {
     db.query("SELECT `id`, `email`, `name` FROM `users` WHERE `email` = '" + req.body.email + "'", (error, rows, fields) => {
         console.log("signUp - ", req.body);
         if(error) {
+            console.log("Ошибка - 400");
             response.status(400, error, res);
         } else if(typeof rows !== 'undefined' && rows.length > 0) {
             const row = JSON.parse(JSON.stringify(rows));
             row.map(rw => {
                 if(rw.email == req.body.email) {
+                    console.log(`Пользователь с таким email - ${rw.email} уже зарегистрирован`);
                     response.status(302, {message: `Пользователь с таким email - ${rw.email} уже зарегистрирован`}, res);
                     return true;
                 }
@@ -38,13 +40,22 @@ exports.signUp = (req, res) => {
             const salt = bscrypt.genSaltSync(2);
             const password = bscrypt.hashSync(req.body.password, salt);
 
+            const raiting = "3";
+            const reviews = "5";
+            const status = "1";
+            const id_user = "20";
 
+            // INSERT INTO `users` (`name`, `email`, `password`) VALUES( 'euax', 'azsf@gmail.com', 'q12');
+            // INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('3', '5', '1', '20');
 
-            const sql = "INSERT INTO `users`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "')";
+            let sql = "INSERT INTO `users`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "');";
+            sql += "INSERT INTO `salesman`(`rating`, `reviews`, `status`, `id_user`) VALUES('" + raiting + "', '" + reviews + "', '" + status + "', '" + id_user + "');" 
             db.query(sql, (error, result) => {
                 if(error) {
+                    console.log("Ошибка регистрации - 400");
                     response.status(400, {message: "Ошибка регистрации"}, res);
                 } else {
+                    console.log("Успешная регистрация");
                     response.status(200, {message: "Регистрация прошла успешно", result}, res);
                 }
             });
