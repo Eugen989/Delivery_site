@@ -47,6 +47,7 @@ const Logup = () => {
     let userData = JSON.parse(localStorage.getItem('UserData'));
     userData.userId = 1
     console.log(userData)
+
     localStorage.setItem('UserData', JSON.stringify(userData))
     const handleAccept = async (e) => {
         e.preventDefault();
