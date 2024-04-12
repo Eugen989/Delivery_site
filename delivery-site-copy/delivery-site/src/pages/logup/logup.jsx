@@ -37,7 +37,7 @@ const Logup = () => {
                 userType: valueSelectRegistering
             });
             console.log(response.data);
-            // Дополнительные действия после успешного запроса
+            window.location.href=('/profile')
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
             // Дополнительные действия при ошибке запроса
