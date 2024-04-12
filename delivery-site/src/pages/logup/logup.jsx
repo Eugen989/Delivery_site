@@ -1,5 +1,5 @@
 import classes from "./logup.module.css";
-import { MyInput, InputSelect } from "../../components/UI/input/MyInput.jsx";
+import { MyInput, InputSelect, RadioBtn } from "../../components/UI/input/MyInput.jsx";
 import { MyButton1 } from "../../components/UI/button/MyButton.jsx";
 import React, {useEffect, useState} from "react";
 
@@ -37,12 +37,22 @@ const Logup = () => {
                         <MyInput type="password" placeholder="Пароль" required/>
                         <MyInput type="password" placeholder="Повторить пароль" required/>
                         <div className={classes.choice}>
-                            <label htmlFor="shippingMethod">Выберите:</label>
-                            <InputSelect id="shippingMethod" name="shippingMethod" required onChange={handlerChange}>
-                                <option value="buyer">Я покупатель</option>
-                                <option value="seller">Я продавец</option>
-                            </InputSelect>
+                            <RadioBtn
+                                text="Я покупатель"
+                                name="choice"
+                                value="buyer"
+                                onChange={handlerChange}
+                                checked={valueSelectRegistering === 'buyer'}
+                            />
+                            <RadioBtn
+                                text="Я продавец"
+                                name="choice"
+                                value="seller"
+                                onChange={handlerChange}
+                                checked={valueSelectRegistering === 'seller'}
+                            />
                         </div>
+
                         <div className={`${classes.btnForm} ${classes.btnFormIn}`}>
                             <MyButton1 type="submit">
                                 Отправить

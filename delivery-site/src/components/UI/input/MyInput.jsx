@@ -10,7 +10,7 @@ const MyInput = ({ ...props }) => {
 const RadioBtn = ({id, text, name, onChange, checked, value}) => {
 
     return (
-        <label htmlFor="men">
+        <label className={classes.labelRadio}>
             <input
                 className={classes.radioBtn}
                 type="radio"
