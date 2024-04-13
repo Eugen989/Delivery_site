@@ -14,6 +14,12 @@ const Basket = () => {
         setShowMap(false);
     };
 
+    const [flag, setFlag] = useState(true)
+
+    function clearBasket () {
+        setFlag(false)
+    }
+
     return (
         <div className="basket mt-1">
             <div className="centring">
@@ -21,7 +27,7 @@ const Basket = () => {
                     <h2 className="title-2">
                         Корзина
                     </h2>
-                    <div className={`${classes.basketFlex} mt-2`}>
+                    <div className={`${classes.basketFlex} mt-3`}>
                         <div className={classes.leftBasket}>
                             <p className={`${classes.finalPrice} text-3`}>
                                 Итоговая цена: <span className="title-3">2000 ₽</span>
@@ -32,13 +38,17 @@ const Basket = () => {
                         </div>
 
                         <div className={classes.basketBody}>
-                            <button className={`${classes.clearButton} text-2`}>
+                            <button className={`${classes.clearButton} text-2`} onClick={clearBasket}>
                                 Очистить корзину
                             </button>
-                            <div className={classes.basketOrders}>
-                                <CardItem></CardItem>
-                                <CardItem></CardItem>
-                            </div>
+                            {flag ?
+                                <div className={classes.basketOrders}>
+                                    <CardItem></CardItem>
+                                    <CardItem></CardItem>
+                                </div>
+                                :
+                                <p className="title-2">Товар не найден</p>
+                            }
                         </div>
                     </div>
                 </div>
