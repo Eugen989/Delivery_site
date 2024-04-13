@@ -12,6 +12,7 @@ const Profile = () => {
 
     // Присваиваем значение 'userName' переменной 'UserName'
     const UserName = userData ? userData.userName : '';
+    const UserType = userData ? userData.userType : '';
     console.log("Test Data - ", JSON.parse(localStorage.getItem('TestData')));
 
     return (
@@ -28,7 +29,7 @@ const Profile = () => {
                                 {UserName}
                                 </h2>
                                 <p className={`${classes.statusProfile} text-4`}>
-                                    <span>Статус:</span>{status ? name = `Покупатель` : name = `Продавец`}
+                                    <span>Статус:</span>{UserType}
                                 </p>
                             </div>
                         </div>
