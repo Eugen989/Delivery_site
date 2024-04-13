@@ -1,3 +1,5 @@
+// db.js
+
 const mysql = require("mysql");
 const config = require("../config")
 
@@ -7,7 +9,11 @@ const connection = mysql.createConnection({
     user: config.DBUSER,
     password: config.DBPASSWORD,
     database: config.DBNAME
-})
+});
+
+const eventNames = {
+    // ваш код событий
+};
 
 connection.connect((error) => {
     if(error) {
@@ -15,6 +21,6 @@ connection.connect((error) => {
     } else {
         return console.log("Подключение к бд удалось");
     }
-})
+});
 
-module.exports = connection;
+module.exports = { connection, eventNames };

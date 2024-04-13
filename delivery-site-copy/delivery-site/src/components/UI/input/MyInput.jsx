@@ -46,7 +46,7 @@ const InputCheck = ({ children, isChecked, onChange }) => {
     );
 };
 
-const InputEdit = ({...props}) => {
+const InputEdit = ({ ...props }) => {
     return (
         <input type="checkbox" {...props} className={classes.InputEdit}/>
     );

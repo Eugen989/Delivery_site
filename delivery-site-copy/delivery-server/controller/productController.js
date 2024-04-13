@@ -36,23 +36,24 @@ exports.createPickUpPoint = (req, res) => {
 
 exports.createProduct = (req, res) => {
     console.log(req.body);
+    res.send("hello");
 
-    db.query("INSERT INTO `warehouse`(`name`, `address`, `x`, `y`) VALUES('" + Новый склад +"' , '" + Geirz +"', " + 1 + ", " + 3 + " );" +
-    "INSERT INTO `pick_up_point`(`name`, `address`, `x`, `y`) VALUES('" + Новое место выдачи + "', '" + Getirz"', " + 1 + ", " + 3 + ");");
+    // db.query("INSERT INTO `warehouse`(`name`, `address`, `x`, `y`) VALUES('" + Новый склад +"' , '" + Geirz +"', " + 1 + ", " + 3 + " );" +
+    // "INSERT INTO `pick_up_point`(`name`, `address`, `x`, `y`) VALUES('" + Новое место выдачи + "', '" + Getirz"', " + 1 + ", " + 3 + ");");
 
-    let sql = "INSERT INTO `product`(`name`, `id_salesman`, `id_warehouse`, `quantity_of_product`, `price`, `proportions`, `weight`, `description`) VALUES('" 
-    + req.body.name +"', " + req.body.id_salesman + ", " + req.body.id_warehouse +", " + req.body.quantity_of_product + ", " + req.body.price + ", " + req.body.proportions + 
-    ", " + req.body.weight + ", '" + req.body.description + "');";
-    db.query(sql, (error, rows, fields) => {
-        if(error) {
-            console.log("Ошибка создания продукта - 400");
-            response.status(400, {message: "Ошибка создания продукта - 400"}, res);
-        }
-        else {
-            console.log("Успешное создание продутка");
-            response.status(200, {message: "Успешное создание продутка"}, res);
-        }
-    });
+    // let sql = "INSERT INTO `product`(`name`, `id_salesman`, `id_warehouse`, `quantity_of_product`, `price`, `proportions`, `weight`, `description`) VALUES('" 
+    // + req.body.name +"', " + req.body.id_salesman + ", " + req.body.id_warehouse +", " + req.body.quantity_of_product + ", " + req.body.price + ", " + req.body.proportions + 
+    // ", " + req.body.weight + ", '" + req.body.description + "');";
+    // db.query(sql, (error, rows, fields) => {
+    //     if(error) {
+    //         console.log("Ошибка создания продукта - 400");
+    //         response.status(400, {message: "Ошибка создания продукта - 400"}, res);
+    //     }
+    //     else {
+    //         console.log("Успешное создание продутка");
+    //         response.status(200, {message: "Успешное создание продутка"}, res);
+    //     }
+    // });
 }
 
 exports.createCheque = (req, res) => {
