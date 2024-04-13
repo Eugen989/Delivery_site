@@ -1,4 +1,4 @@
-import classes from "./createProduct.module.css";
+import classes from "./editProduct.module.css";
 import {InputEdit, TextareaEdit} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
 import React, { useState } from "react";
