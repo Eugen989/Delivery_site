@@ -130,8 +130,26 @@ exports.signIn = (req, res) => {
                             email: rw.email
                         }, config.jwt, {expiresIn: 120 * 120 });
 
-                        console.log("Вы зашли под своим акаунтом");
-                        response.status(200, {token: token}, res);
+                        console.log("Вы зашли под своим акаунтом -", req.query.email);
+                        db.query("SELECT * FROM `users` WHERE `email` = '" + req.query.email + "';", (next_error, next_rows) => {
+                            let user_id = next_rows[0].id;
+                            let user_name = next_rows[0].name;
+                            console.log("user_id -", user_id);
+
+                            db.query("SELECT * FROM `salesman` where `id_user` = " + req.query.id + ";", (second_error, second_rows) => {
+                                if(typeof rows !== 'undefined' && rows.length > 0) {
+                                    // res.send(JSON.stringify({id: req.query.id, name: req.query.name}));
+                                    response.status(200, {"id": user_id, "name": user_name, "type": "salesman"}, res);
+                                }
+                                else {
+                                    // res.send({"id": req.query.id, "name": req.query.name, "type": "buyer"});
+                                    response.status(200, {"id": user_id, "name": user_name, "type": "buyer"}, res);
+                                }
+                            })
+                        });
+
+                        
+                        // response.status(200, {token: token}, res);
 
                     } else {
                         response.status(401, {message: "Пароль не верный"}, res);
