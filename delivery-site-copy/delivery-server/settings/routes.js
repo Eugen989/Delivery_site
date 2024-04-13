@@ -20,5 +20,6 @@ module.exports = (app) => {
     app.route("/api/product/getWarehouse").get(productController.getWarehouse);
     app.route("/api/product/getPickUpPoint").get(productController.getPickUpPoint);
     app.route("/api/product/getProduct").get(productController.getProduct);
+    app.route("/api/product/getAllProducts").get(productController.getAllProducts);
     app.route("/api/product/getCheque").get(productController.getCheque);
 }

@@ -118,6 +118,28 @@ exports.getProduct = (req, res) => {
     });
 }
 
+exports.getAllProducts = (req, res) => {
+    console.log(req.body);
+    let sql = "select * from `product`;";
+    db.query(sql, (error, rows, fields) => {
+        if(error) {
+            console.log("Ошибка вывода склада - 400");
+            response.status(400, {message: "Ошибка чека - 400"}, res);
+        }
+        else {
+            let data_values = [];
+            let n = 0
+            rows.map(rw => {
+                data_values[n++] = {"id": rw.id, "name": rw.name, "id_selesmas": rw.id_selesmas, "id_warehouse": rw.id_warehouse, 
+                "quantity_of_product": rw.quantity_of_product, "price": rw.price, "proportions": rw.proportions, "weight": rw.weight, 
+                "description": rw.description};
+            })
+            console.log("Успешный вывод склада -", data_values);
+            response.status(200, data_values, res);
+        }
+    });
+}
+
 exports.getCheque = (req, res) => {
     console.log(req.body);
     let sql = "INSERT INTO `cheque`(`id_product`, `id_salesman`, `date`, `id_buyer`, `tax`) VALUES(" + req.body.id_product + " , " + req.body.id_salesman + 

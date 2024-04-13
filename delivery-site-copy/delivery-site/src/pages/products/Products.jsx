@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./products.module.css";
 import CardItem from "../../components/cardItem/CardItem";
 import {InputFilter} from "../../components/UI/input/MyInput.jsx";
 import {MyButton2} from "../../components/UI/button/MyButton.jsx";
+import axios from "axios";
+
 
 // localStorage.clear();
 // localStorage.setItem('UserData', JSON.stringify({userId: 1, userName: '', userType: ''}));
 // console.log(JSON.parse(localStorage.getItem('UserData')))
 
 const Products = () => {
-    const [cards, setCards] = useState([
-        { id: 1, title: "Картошечка",warehouse:"Минск",massa:54,size:34,body: "Очень очень вкусно",price:777,price_now:888 },
-        { id: 2, title: "Драники",warehouse:"Брянск",massa:0.750,size:17,body: "Сделано из картошки",price:799,price_now:988},
-        { id: 3, title: "Блины",warehouse:"Москва",massa:0.250,size:54,body: "С добавлением картошки",price:997,price_now:898 },
-    ]);
+    const [cards, setCards] = useState([]);
+      
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get(
+              "http://localhost:5000/api/product/getAllProducts"
+            );
+            setCards(response.data.values);
+          } catch (error) {
+            console.error("Ошибка при отправке запроса:", error);
+          }
+        };
+        fetchData();
+      }, []);
 
     return (
         <div className="products mt-1">
-
             <div className="centring">
                 <div className={classes.productsFlex}>
                     <div className={classes.filter}>
@@ -60,40 +71,26 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="cardGroup">
-                        <select name="" id="">
-                            <option value="">
-                                По названию
-                            </option>
-                            <option value="">
-                                По цене
-                            </option>
-                            <option value="">
-                                По массе
-                            </option>
-                            <option value="">
-                                По размеру
-                            </option>
-                        </select>
                         {cards.length > 0 ? (
-                            cards.map((card) => (
-                                <div key={card.id}>
-                                    <CardItem title={card.title}
-                                              warehouse={card.warehouse}
-                                              massa={card.massa}
-                                              size={card.size}
-                                              body={card.body}
-                                              price={card.price}
-                                              price_now={card.price_now}/>
-                                </div>
-                            ))
+                        cards.map((card) => (
+                            <div key={card.id}>
+                            <CardItem
+                                title={card.name}
+                                warehouse={card.id_warehouse}
+                                massa={card.quantity_of_product}
+                                size={card.price}
+                                body={card.proportions}
+                                price={card.quantity_of_product}
+                                price_now={card.weight}
+                            />
+                            </div>
+                        ))
                         ) : (
-                            <p className="title-2">Товар не найден</p>
-                        )
-                        }
+                        <p className="title-2">Товар не найден</p>
+                        )}
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
