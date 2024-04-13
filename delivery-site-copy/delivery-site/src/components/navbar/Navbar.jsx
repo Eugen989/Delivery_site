@@ -50,4 +50,5 @@ function Navbar({ isMainPage }) {
     )
 }
 
+
 export default Navbar

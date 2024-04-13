@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 const Logup = () => {
-
     console.log(localStorage.UserData);
     // if(!localStorage.UserData){
     localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}));
