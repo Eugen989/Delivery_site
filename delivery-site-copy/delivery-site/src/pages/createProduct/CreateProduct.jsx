@@ -79,6 +79,7 @@ const CreateProduct = () => {
                                     <label htmlFor="real-input" className={classes.customFileUpload}>Загрузить файл</label>
                                 </div>
                                 <div className={classes.editBody}>
+<<<<<<< HEAD
                                     <InputEdit type="text" name="name" value={product.name} onChange={handleChange} placeholder="Наименование товара" required/>
                                     <InputEdit type="text" name="proportions" value={product.proportions} onChange={handleChange} placeholder="Размер товара" required/>
                                     <InputEdit type="number" name="weight" value={product.weight} onChange={handleChange} placeholder="Масса товара" required/>
@@ -91,6 +92,21 @@ const CreateProduct = () => {
                                     <InputEdit type="text" id="pickUpX" name="pickUpX" value={product.pickUpX} onChange={handleChange} placeholder="X точка выдачи"/>
                                     <InputEdit type="text" id="pickUpY" name="pickUpY" value={product.pickUpY} onChange={handleChange} placeholder="Y точка выдачи"/>
                                     <TextareaEdit name="description" value={product.description} onChange={handleChange} placeholder="О товаре" rows="5"></TextareaEdit>
+=======
+                                    <InputEdit type="text" name="name" value={setProduct.name} placeholder="Наименование товара" required/>
+                                    <InputEdit type="text" name="proportions" value={setProduct.proportions} placeholder="Размер товара" required/>
+                                    <InputEdit type="number" name="weight" value={setProduct.weight} placeholder="Масса товара" required/>
+                                    <InputEdit type="number" id="price" name="price" value={setProduct.price} placeholder="Цена товара"
+                                               required/>
+                                    <InputEdit type="text" id="sale" name="sale" value={setProduct.sale} placeholder="Скидка"/>
+                                    <InputEdit type="text" id="warehouseX" name="warehouseX" value={setProduct.warehouseX} placeholder="Х точка склада"/>
+                                    <InputEdit type="text" id="warehouseY" name="warehouseY" value={setProduct.warehouseY} placeholder="Y точка склада"/>
+                                    <InputEdit type="text" id="pickUpX" name="pickUpX" value={setProduct.pickUpX} placeholder="Х точка выдачи"/>
+                                    <InputEdit type="text" id="pickUpY" name="pickUpY" value={setProduct.pickUpY} placeholder="Y точка выдачи"/>
+                                    <InputEdit type="text" id="warehouseName" name="warehouseName" placeholder="Название склада" value="a"/>
+                                    <InputEdit type="text" id="pickUpName" name="pickUpName" placeholder="Название пункта выдачи" value="b"/>
+                                    <TextareaEdit name="description" value={setProduct.description} placeholder="О товаре" rows="5"></TextareaEdit>
+>>>>>>> 9eaf51febb10bddb3a57b384dfc82111f1767764
                                     <div className={classes.editBtn}>
                                         <MyButton2 type="button" id="cancelButton">Отменить</MyButton2>
                                         <MyButton2 type="submit">Добавить</MyButton2>
@@ -104,4 +120,5 @@ const CreateProduct = () => {
         </div>
     );
 };
+
 export default CreateProduct;
