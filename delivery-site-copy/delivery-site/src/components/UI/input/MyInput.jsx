@@ -52,6 +52,12 @@ const InputEdit = ({...props}) => {
     );
 };
 
+const TextareaEdit = ({...props}) => {
+    return (
+        <textarea {...props} className={classes.textareaEdit}></textarea>
+    );
+};
+
 const InputSelect = ({children, ...props}) => {
     return (
         <select {...props} className={classes.inputSelect}>
@@ -61,4 +67,4 @@ const InputSelect = ({children, ...props}) => {
 };
 
 
-export { MyInput, RadioBtn, InputFilter, InputCheck, InputEdit, InputSelect };
+export { MyInput, RadioBtn, InputFilter, InputCheck, InputEdit, InputSelect, TextareaEdit };

@@ -6,6 +6,16 @@ import axios from "axios";
 
 const Logup = () => {
 
+    console.log(localStorage.UserData);
+    // if(!localStorage.UserData){
+    localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}));
+    // }
+    // localStorage.removeItem("UserData")
+
+    // JSON.parse(localStorage.getItem('UserData')).userId = 2;
+    // localStorage.userData.userId = 2;
+    // console.log(JSON.parse(localStorage.getItem('UserData')))
+
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [dataAuth, setDataAuth] = useState([]);
@@ -44,11 +54,7 @@ const Logup = () => {
         }
     };
 
-    let userData = JSON.parse(localStorage.getItem('UserData'));
-    userData.userId = 1
-    console.log(userData)
-
-    localStorage.setItem('UserData', JSON.stringify(userData))
+    localStorage.removeItem("TestData");
     const handleAccept = async (e) => {
         e.preventDefault();
         try {
@@ -59,8 +65,13 @@ const Logup = () => {
                 }
             });
 
-            console.log(response.data);
-            window.location.href=('/')
+            let data = response.data.values;
+            console.log(data.type);
+            // localStorage.removeItem("TestData");
+            // localStorage.setItem('TestData', JSON.stringify(data));
+            // console.log("TestData", JSON.parse(localStorage.getItem('TestData')))
+            localStorage.setItem('UserData', JSON.stringify({userId: data.id, userName: data.name, userType: data.type}));
+            window.location.href=('/profile')
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
         }
@@ -71,17 +82,6 @@ const Logup = () => {
     const toggleForm = () => {
         setIsRegistering(prevState => !prevState);
     };
-
-    // useEffect(() => {
-    //     console.log(dataAuth);
-    //     if(dataAuth) {
-    //         axios.post("http://localhost:5000/api/auth/signUp")
-    //         .then((response) => {
-    //         setDataAuth(response.data.values);
-    //         console.log(response.data);
-    //         });
-    //     }
-    // }, [])
 
     return (
         <div className="logup">

@@ -20,30 +20,30 @@ import Basket from "./pages/basket/Basket.jsx";
 import EditProduct from "./pages/editProduct/EditProduct.jsx";
 import CreateProduct from "./pages/createProduct/CreateProduct.jsx";
 import MakingOrder from "./pages/makingOrder/MakingOrder.jsx";
+import About from "./pages/about/About.jsx"
 
 import { useState, useEffect } from 'react';
 import axios from "axios";
 
 console.log("Проект в App")
 
+// localStorage.clear();
+console.log("User data - ", JSON.parse(localStorage.getItem('UserData')));
 
-// Сохраняем значение UseId в localStorage
-localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}));
-console.log(JSON.parse(localStorage.getItem('UserData')))
 function App() {
     const menuProps = {
         isMainPage: window.location.pathname === '/' || window.location.pathname === ''
     };
 
-    // const [dataAuth, setDataAuth] = useState([]);
+    const [dataAuth, setDataAuth] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:5000/api/users")
-    //     .then((response) => {
-    //     setDataAuth(response.data.values);
-    //     console.log(response.data);
-    //     });
-    // }, [])
+    useEffect(() => {
+        axios.get("http://localhost:5000/api/stocks")
+            .then((response) => {
+                // setDataAuth(response.data.values);
+                console.log("Данные с сервера - ", response.data);
+            });
+    }, [])
 
     return (
         <BrowserRouter>
@@ -72,6 +72,7 @@ function App() {
                         <Route path='/edit' Component={EditProduct}/>
                         <Route path='/create' Component={CreateProduct}/>
                         <Route path='/making' Component={MakingOrder}/>
+                        <Route path='/about' Component={About}/>
                     </Routes>
 
                 </div>
