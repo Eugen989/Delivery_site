@@ -36,6 +36,10 @@ exports.createPickUpPoint = (req, res) => {
 
 exports.createProduct = (req, res) => {
     console.log(req.body);
+
+    db.query("INSERT INTO `warehouse`(`name`, `address`, `x`, `y`) VALUES('" + Новый склад +"' , '" + Geirz +"', " + 1 + ", " + 3 + " );" +
+    "INSERT INTO `pick_up_point`(`name`, `address`, `x`, `y`) VALUES('" + Новое место выдачи + "', '" + Getirz"', " + 1 + ", " + 3 + ");");
+
     let sql = "INSERT INTO `product`(`name`, `id_salesman`, `id_warehouse`, `quantity_of_product`, `price`, `proportions`, `weight`, `description`) VALUES('" 
     + req.body.name +"', " + req.body.id_salesman + ", " + req.body.id_warehouse +", " + req.body.quantity_of_product + ", " + req.body.price + ", " + req.body.proportions + 
     ", " + req.body.weight + ", '" + req.body.description + "');";
