@@ -52,12 +52,12 @@ const Products = () => {
     const applyFilters = () => {
         const filteredCards = cards.filter(card => {
             return (
-                (filterValues.priceMin === "" || card.price_now >= parseInt(filterValues.priceMin)) &&
-                (filterValues.priceMax === "" || card.price_now <= parseInt(filterValues.priceMax)) &&
-                (filterValues.sizeMin === "" || card.size >= parseInt(filterValues.sizeMin)) &&
-                (filterValues.sizeMax === "" || card.size <= parseInt(filterValues.sizeMax)) &&
-                (filterValues.massaMin === "" || card.massa >= parseFloat(filterValues.massaMin)) &&
-                (filterValues.massaMax === "" || card.massa <= parseFloat(filterValues.massaMax))
+                (filterValues.priceMin === "" || card.price >= parseInt(filterValues.priceMin)) &&
+                (filterValues.priceMax === "" || card.price <= parseInt(filterValues.priceMax)) &&
+                (filterValues.sizeMin === "" || card.weight >= parseInt(filterValues.sizeMin)) &&
+                (filterValues.sizeMax === "" || card.weight <= parseInt(filterValues.sizeMax)) &&
+                (filterValues.massaMin === "" || card.quantity_of_product >= parseFloat(filterValues.massaMin)) &&
+                (filterValues.massaMax === "" || card.quantity_of_product <= parseFloat(filterValues.massaMax))
             );
         });
 
@@ -65,13 +65,13 @@ const Products = () => {
     };
 
     const sortedItems = [...cards].sort((a, b) => {
-        if (sortBy === 'price_now') {
-            return a.price_now - b.price_now;
-        } else if (sortBy === 'massa') {
-            return a.massa - b.massa;
-        } else if (sortBy === 'size') {
-            if (a.size < b.size) return -1;
-            if (a.size > b.size) return 1;
+        if (sortBy === 'price') {
+            return a.price - b.price;
+        } else if (sortBy === 'quantity_of_product') {
+            return a.quantity_of_product - b.quantity_of_product;
+        } else if (sortBy === 'weight') {
+            if (a.weight < b.weight) return -1;
+            if (a.weight > b.weight) return 1;
             return 0;
         } else {
             return 0;
@@ -160,8 +160,8 @@ const Products = () => {
                     <select onChange={handleSortChange}>
                         <option value="">По названию</option>
                         <option value="price">По цене</option>
-                        <option value="weight">По массе</option>
-                        <option value="size">По размеру</option>
+                        <option value="size">По массе</option>
+                        <option value="massa">По размеру</option>
                     </select>
                         {cards.length > 0 ? (
                         sortedItems.map((card) => (
@@ -170,10 +170,10 @@ const Products = () => {
                                 title={card.name}
                                 warehouse={card.id_warehouse}
                                 massa={card.quantity_of_product}
-                                size={card.price}
+                                size={card.weight}
                                 body={card.proportions}
                                 price={card.quantity_of_product}
-                                price_now={card.weight}
+                                price_now={card.price}
                             />
                             </div>
                         ))
