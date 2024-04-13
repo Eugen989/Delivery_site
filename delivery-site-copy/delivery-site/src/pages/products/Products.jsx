@@ -10,16 +10,16 @@ import {MyButton2} from "../../components/UI/button/MyButton.jsx";
 
 const Products = () => {
     const [cards, setCards] = useState([
-        { id: 1, title: "Картошечка",warehouse:"Минск",massa:54,size:34,body: "Очень очень вкусно",price:777,price_now:888 },
-        { id: 2, title: "Драники",warehouse:"Брянск",massa:0.750,size:17,body: "Сделано из картошки",price:799,price_now:988},
-        { id: 3, title: "Блины",warehouse:"Москва",massa:0.250,size:54,body: "С добавлением картошки",price:997,price_now:898 },
+        // { id: 1, title: "Картошечка",warehouse:"Минск",massa:54,size:34,body: "Очень очень вкусно",price:777,price_now:888 },
+        // { id: 2, title: "Драники",warehouse:"Брянск",massa:0.750,size:17,body: "Сделано из картошки",price:799,price_now:988},
+        // { id: 3, title: "Блины",warehouse:"Москва",massa:0.250,size:54,body: "С добавлением картошки",price:997,price_now:898 },
     ]);
 
     return (
         <div className="products mt-1">
 
             <div className="centring">
-                <div className={classes.productsFlex}>
+                <div className={cards.length > 0 ? classes.productsFlex : classes.productsFlexGap}>
                     <div className={classes.filter}>
                         <h3 className="title-3">
                             Фильтр
@@ -87,7 +87,7 @@ const Products = () => {
                                 </div>
                             ))
                         ) : (
-                            <p className="title-2">Товар не найден</p>
+                            <p className={`${classes.noProduct} title-2`}>Товар не найден</p>
                         )
                         }
                     </div>
