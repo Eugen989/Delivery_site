@@ -2,7 +2,7 @@ module.exports = {
     HOST: "localhost",
     PORT: 3307,
     DBUSER: "root",
-    DBPASSWORD: "",
+    DBPASSWORD: "root",
     DBNAME: "deliverydb",
 
     jwt: "jwt-key"
