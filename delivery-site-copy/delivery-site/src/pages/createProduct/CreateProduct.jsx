@@ -93,4 +93,5 @@ const CreateProduct = () => {
         </div>
     );
 };
+
 export default CreateProduct;
