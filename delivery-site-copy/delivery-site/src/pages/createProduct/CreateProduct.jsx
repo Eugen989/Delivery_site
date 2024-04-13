@@ -38,6 +38,8 @@ const CreateProduct = () => {
                                     <InputEdit type="text" id="warehouseY" name="warehouseY" placeholder="Y точка склада"/>
                                     <InputEdit type="text" id="pickUpX" name="pickUpX" placeholder="Х точка выдачи"/>
                                     <InputEdit type="text" id="pickUpY" name="pickUpY" placeholder="Y точка выдачи"/>
+                                    <InputEdit type="text" id="warehouseName" name="warehouseName" placeholder="Название склада" value="a"/>
+                                    <InputEdit type="text" id="pickUpName" name="pickUpName" placeholder="Название пункта выдачи" value="b"/>
                                     <TextareaEdit name="description" placeholder="О товаре" rows="5"></TextareaEdit>
                                     <div className={classes.editBtn}>
                                         <MyButton2 type="button" id="cancelButton">Отменить</MyButton2>
