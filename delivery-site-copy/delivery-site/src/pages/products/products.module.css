@@ -4,6 +4,12 @@
     margin-top: 160px;
 }
 
+.productsFlexGap {
+    display: flex;
+    margin-top: 160px;
+    gap: 60px;
+}
+
 .filter {
     max-width: 250px;
     width: 100%;
@@ -39,4 +45,8 @@
     display: flex;
     justify-content: end;
     padding: 0 20px;
+}
+
+.noProduct {
+    margin-top: 16px;
 }
