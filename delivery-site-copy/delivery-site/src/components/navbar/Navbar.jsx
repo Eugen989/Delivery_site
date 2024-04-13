@@ -22,7 +22,7 @@ function Navbar({ isMainPage }) {
                                 </a>
                             </li>
                             <li className="menu-item">
-                                <a href="" className="menu-link">О нас</a>
+                                <a href="/about" className="menu-link">О нас</a>
                             </li>
                         </div>
                         <div className="right-navbar">
@@ -32,14 +32,14 @@ function Navbar({ isMainPage }) {
                             </a>
                             <div className="profile-link">
                                 {
-                                    userData.userId ? 
-                                    <a href="/profile" className="yes-profile">
-                                        <img src="images/avatar-profile.png" alt=""/>
-                                    </a>
-                                    :
-                                    <a href="/logup" className="no-profile no-profile--active">
-                                        Войти
-                                    </a>
+                                    userData.userId ?
+                                        <a href="/profile" className="yes-profile">
+                                            <img src="images/avatar-profile.png" alt=""/>
+                                        </a>
+                                        :
+                                        <a href="/logup" className="no-profile no-profile--active">
+                                            Войти
+                                        </a>
                                 }
                             </div>
                         </div>
@@ -49,5 +49,6 @@ function Navbar({ isMainPage }) {
         </div>
     )
 }
+
 
 export default Navbar

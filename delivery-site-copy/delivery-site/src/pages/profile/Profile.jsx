@@ -8,7 +8,11 @@ const Profile = () => {
         localStorage.setItem('UserData', JSON.stringify({userId: 0, userName: '', userType: ''}))
         window.location.href=('/logup')
     }
+    const userData = JSON.parse(localStorage.getItem('UserData'));
 
+    // Присваиваем значение 'userName' переменной 'UserName'
+    const UserName = userData ? userData.userName : '';
+    const UserType = userData ? userData.userType : '';
     console.log("Test Data - ", JSON.parse(localStorage.getItem('TestData')));
 
     return (
@@ -22,10 +26,10 @@ const Profile = () => {
                             </div>
                             <div className="titleProfile">
                                 <h2 className="title-2 username">
-                                    id_0000001
+                                {UserName}
                                 </h2>
                                 <p className={`${classes.statusProfile} text-4`}>
-                                    <span>Статус:</span>{status ? name = `Покупатель` : name = `Продавец`}
+                                    <span>Статус:</span>{UserType}
                                 </p>
                             </div>
                         </div>

@@ -20,15 +20,16 @@ import Basket from "./pages/basket/Basket.jsx";
 import EditProduct from "./pages/editProduct/EditProduct.jsx";
 import CreateProduct from "./pages/createProduct/CreateProduct.jsx";
 import MakingOrder from "./pages/makingOrder/MakingOrder.jsx";
+import About from "./pages/about/About.jsx"
 
 import { useState, useEffect } from 'react';
 import axios from "axios";
 
-console.log("Проект в App");
+console.log("Проект в App")
+
 
 // localStorage.clear();
 console.log("User data - ", JSON.parse(localStorage.getItem('UserData')));
-
 
 function App() {
     const menuProps = {
@@ -39,10 +40,10 @@ function App() {
 
     useEffect(() => {
         axios.get("http://localhost:5000/api/stocks")
-        .then((response) => {
-        // setDataAuth(response.data.values);
-        console.log("Данные с сервера - ", response.data);
-        });
+            .then((response) => {
+                // setDataAuth(response.data.values);
+                console.log("Данные с сервера - ", response.data);
+            });
     }, [])
 
     return (
@@ -72,6 +73,7 @@ function App() {
                         <Route path='/edit' Component={EditProduct}/>
                         <Route path='/create' Component={CreateProduct}/>
                         <Route path='/making' Component={MakingOrder}/>
+                        <Route path='/about' Component={About}/>
                     </Routes>
 
                 </div>

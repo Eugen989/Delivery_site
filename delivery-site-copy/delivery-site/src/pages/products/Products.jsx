@@ -30,7 +30,7 @@ const Products = () => {
     return (
         <div className="products mt-1">
             <div className="centring">
-                <div className={classes.productsFlex}>
+                <div className={cards.length > 0 ? classes.productsFlex : classes.productsFlexGap}>
                     <div className={classes.filter}>
                         <h3 className="title-3">
                             Фильтр
